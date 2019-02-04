@@ -1,4 +1,4 @@
-# DS2 Data Storytelling portfolio project
+# DS2 Data Storytelling portfolio project - Dmitriy
 
 Contents
 - [Deliverables](#deliverables)
