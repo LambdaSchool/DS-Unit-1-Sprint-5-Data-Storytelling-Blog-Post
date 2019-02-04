@@ -9,7 +9,7 @@ Contents
 
 _The project has five parts. For each part, we've listed what's required to pass the Sprint Challenge, and what's recommended but not required._
 
-### 1. Blog post
+### 1. Blog post - RE Price Prediction
 
 Required
 - Choose your own topic and data.
