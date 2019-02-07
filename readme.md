@@ -120,4 +120,4 @@ Friday, February 8 — PM
 
 # Add a link to your portfolio 
 
-[Example Link](http://www.dsglossary.com) 
+[Example Link](http://www.dsglossary.com)  
