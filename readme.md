@@ -120,4 +120,5 @@ Friday, February 8 — PM
 
 # Add a link to your portfolio
 
+https://medium.com/@chris.louie/can-a-starbucks-a-day-keep-the-doctor-away-b2b71c4baa70
 https://github.com/Ruwai/Starbucks-EDA
