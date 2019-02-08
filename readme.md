@@ -3,8 +3,8 @@
 ## Description
 
 This notebook analyzes a 500k row random sample of the 6.2Gb Amazon Customer Review dataset. 
-The dataset spans the years 1995 to 2015 and includes customer reviews, ratings, and the votes
-on those reviews.
+The dataset spans the years 1995 to 2015 and includes user product ratings, product reviews, 
+and user votes given to each product review.
 
 Using this data I analyzed which elements of a review engage and spur interaction between users
 on Amazon. This kind of analysis is useful when you want to understand how and in which ways you
