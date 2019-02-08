@@ -7,7 +7,7 @@ The dataset spans the years 1995 to 2015 and includes customer reviews, ratings,
 on those reviews.
 
 Using this data I analyzed which elements of a review engage and spur interaction between users
-on Amazon. This kind of analysis is useful when you want to understand how and which way you
+on Amazon. This kind of analysis is useful when you want to understand how and in which ways you
 want to grow the community centered around your product. In this case, I used the features of
 each review to undestand what made other users deem it 'helpful'.
 
