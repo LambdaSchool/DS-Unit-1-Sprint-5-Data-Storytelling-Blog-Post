@@ -13,6 +13,8 @@ each review to undestand what made other users deem it 'helpful'.
 
 The full description of the dataset can be seen below.
 
+![Sentiment By Total Votes Scaled By Helpfulness](static/sentiment-by-votes-scatterplot.png)
+
 ## Data Structure
 
 You can see the full description page here: https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt
