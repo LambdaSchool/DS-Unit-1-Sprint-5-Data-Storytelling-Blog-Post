@@ -1,5 +1,7 @@
 # Lambda School - DS2 - Data Storytelling
 
+![Sentiment By Total Votes Scaled By Helpfulness](static/sentiment-by-votes-scatterplot.png)
+
 ## Description
 
 This notebook analyzes a 500k row random sample of the 6.2Gb Amazon Customer Review dataset. 
@@ -12,8 +14,6 @@ want to grow the community centered around your product. In this case, I used th
 each review to undestand what made other users deem it 'helpful'.
 
 The full description of the dataset can be seen below.
-
-![Sentiment By Total Votes Scaled By Helpfulness](static/sentiment-by-votes-scatterplot.png)
 
 ## Data Structure
 
