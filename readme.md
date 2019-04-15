@@ -1,4 +1,4 @@
-# DS Data Storytelling portfolio project
+# DS Data Storytelling portfolio project - Nico
 
 Contents
 - [Deliverables](#deliverables)
