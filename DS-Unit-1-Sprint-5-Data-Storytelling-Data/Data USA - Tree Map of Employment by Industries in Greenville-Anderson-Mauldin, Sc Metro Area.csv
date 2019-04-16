@@ -1,0 +1,61 @@
+year,acs_ind_name,acs_ind,geo_name,geo,num_emp,num_emp_moe,num_emp_rca
+2014.0,"Agriculture, Forestry, Fishing, Hunting","0000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",1590.0,768.427,0.414874
+2014.0,"Mining, Quarrying, Oil, Gas Extraction","0001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",458.0,486.966,0.236044
+2014.0,"Construction","0100","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",22612.0,2889.29,0.938685
+2014.0,"Manufacturing","020x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",70226.0,4255.93,1.8345
+2014.0,"Wholesale trade","030x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",15808.0,2210.94,1.44804
+2014.0,"Retail trade","040x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",45191.0,3410.59,1.00631
+2014.0,"Transportation & Warehousing","0500","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",12384.0,2113.16,0.771623
+2014.0,"Utilities","0501","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",3341.0,844.654,1.09292
+2014.0,"Information","060x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",5777.0,1367.36,0.65269
+2014.0,"Finance & Insurance","0700","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",12979.0,1764.06,0.699253
+2014.0,"Real Estate, Rental & Leasing","0701","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",5554.0,1204.4,0.717929
+2014.0,"Professional, Scientific, Tech Services","0800","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",23416.0,2394.46,0.85008
+2014.0,"Management of Companies & Enterprises","0801","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",281.0,218.083,0.986238
+2014.0,"Admin., Support, Waste Management Services","0802","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",18119.0,2473.54,1.0315
+2014.0,"Educational Services","0900","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",35379.0,2970.77,0.984729
+2014.0,"Healthcare & Social Assistance","0901","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",47545.0,3362.28,0.886552
+2014.0,"Arts, Entertainment, Recreation","1000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",4874.0,1151.93,0.557492
+2014.0,"Accommodation & Food Service","1001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",32426.0,3624.52,1.07895
+2014.0,"Other services, except public administration","110x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",20273.0,2612.58,1.04819
+2014.0,"Public Admin.","1200","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",11051.0,1940.45,0.614894
+2015.0,"Agriculture, Forestry, Fishing, Hunting","0000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",2456.0,895.559,0.630058
+2015.0,"Mining, Quarrying, Oil, Gas Extraction","0001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",109.0,265.424,0.060833
+2015.0,"Construction","0100","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",23499.0,2552.42,0.942246
+2015.0,"Manufacturing","020x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",77771.0,4683.4,1.99675
+2015.0,"Wholesale trade","030x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",10103.0,1603.89,0.921769
+2015.0,"Retail trade","040x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",42335.0,3301.44,0.929726
+2015.0,"Transportation & Warehousing","0500","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",12446.0,2216.35,0.732408
+2015.0,"Utilities","0501","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",3005.0,737.641,0.963511
+2015.0,"Information","060x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",9376.0,1772.11,1.08262
+2015.0,"Finance & Insurance","0700","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",13912.0,2030.91,0.7343
+2015.0,"Real Estate, Rental & Leasing","0701","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",6692.0,1271.0,0.838311
+2015.0,"Professional, Scientific, Tech Services","0800","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",19823.0,2121.97,0.686581
+2015.0,"Management of Companies & Enterprises","0801","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",242.0,211.568,0.628261
+2015.0,"Admin., Support, Waste Management Services","0802","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",20220.0,2588.3,1.13501
+2015.0,"Educational Services","0900","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",37258.0,3043.49,1.02258
+2015.0,"Healthcare & Social Assistance","0901","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",51487.0,3604.62,0.944073
+2015.0,"Arts, Entertainment, Recreation","1000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",5546.0,999.277,0.627999
+2015.0,"Accommodation & Food Service","1001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",28573.0,3243.07,0.933504
+2015.0,"Other services, except public administration","110x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",20591.0,2547.6,1.05747
+2015.0,"Public Admin.","1200","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",11225.0,1647.91,0.625743
+2016.0,"Agriculture, Forestry, Fishing, Hunting","0000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",4445.0,2222.11,1.15405
+2016.0,"Mining, Quarrying, Oil, Gas Extraction","0001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",496.0,322.895,0.334975
+2016.0,"Construction","0100","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",24735.0,3018.73,0.942901
+2016.0,"Manufacturing","020x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",76038.0,4793.97,1.90556
+2016.0,"Wholesale trade","030x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",11980.0,1626.17,1.07135
+2016.0,"Retail trade","040x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",49169.0,4026.47,1.03864
+2016.0,"Transportation & Warehousing","0500","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",13208.0,2199.25,0.721173
+2016.0,"Utilities","0501","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",4470.0,1290.31,1.39775
+2016.0,"Information","060x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",5561.0,1061.57,0.624143
+2016.0,"Finance & Insurance","0700","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",14554.0,1746.39,0.733148
+2016.0,"Real Estate, Rental & Leasing","0701","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",6989.0,1462.4,0.819208
+2016.0,"Professional, Scientific, Tech Services","0800","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",28972.0,2790.65,0.944781
+2016.0,"Management of Companies & Enterprises","0801","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",79.0,231.21,0.167259
+2016.0,"Admin., Support, Waste Management Services","0802","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",16508.0,2245.16,0.898195
+2016.0,"Educational Services","0900","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",38030.0,2919.51,1.00494
+2016.0,"Healthcare & Social Assistance","0901","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",50424.0,3418.34,0.880924
+2016.0,"Arts, Entertainment, Recreation","1000","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",5976.0,1138.89,0.644008
+2016.0,"Accommodation & Food Service","1001","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",31050.0,3285.46,0.969028
+2016.0,"Other services, except public administration","110x","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",22097.0,2595.67,1.07488
+2016.0,"Public Admin.","1200","Greenville-Anderson-Mauldin, SC Metro Area","31000US24860",9388.0,1688.17,0.496879
