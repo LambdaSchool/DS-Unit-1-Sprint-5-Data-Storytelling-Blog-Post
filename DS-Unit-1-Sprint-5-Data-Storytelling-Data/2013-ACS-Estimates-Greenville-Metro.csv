@@ -1,15 +1,15 @@
-Industry,Estimates,Margin of Error +/-,
-Civilian employed population 16 years and over,377859,5965
+Industry, Estimates, Margin of Error +/-,
+"Civilian employed population 16 years and over",377859,5965
 "Agriculture, forestry, fishing and hunting, and mining",1532,568
-Construction,20386,2491
-Manufacturing,69640,3721
-Wholesale trade,11753,1794
-Retail trade,41161,3507
+"Construction",20386,2491
+"Manufacturing",69640,3721
+"Wholesale trade",11753,1794
+"Retail trade",41161,3507
 "Transportation and warehousing, and utilities",15582,1885
-Information,6842,1447
+"Information",6842,1447
 "Finance and insurance, and real estate and rental and leasing",18941,2316
 "Professional, scientific, and management, and administrative and waste management services",37180,3524
 "Educational services, and health care and social assistance",85060,4402
 "Arts, entertainment, and recreation, and accommodation and food services",39696,3133
 "Other services, except public administration",18761,2454
-Public administration,11325,1773,
+"Public administration",11325,1773,
