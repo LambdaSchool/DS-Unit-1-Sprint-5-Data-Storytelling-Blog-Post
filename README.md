@@ -1,6 +1,6 @@
 # Read-me
 
-- The csv files are in the parking-citations-2019 files folder.
+- The csv files are in the parking-citations-2018 files folder.
 - It's a big file. Download both part 1 and part 2 and extract it.
 - Open your anaconda, google colab or any other program editing tool. 
 - Open the ipynb file
