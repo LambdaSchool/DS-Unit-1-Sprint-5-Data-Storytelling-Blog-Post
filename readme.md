@@ -19,7 +19,7 @@ Required
 
 Recommended
 - Don't write a ["wall of text."](https://www.theonion.com/nation-shudders-at-large-block-of-uninterrupted-text-1819571366) Format your post to be [skimmable](https://www.nngroup.com/articles/how-users-read-on-the-web/). Edit it to be [readable](http://www.hemingwayapp.com/).
-- Describe both your insights and your process, but focus more on the insights. Don’t include much code, if any, in your blog post.
+- Describe both your insights and your process, but focus more on the insights. Do not include much code, if any, in your blog post.
 
 ### 2. Code
 Required
