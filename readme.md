@@ -33,8 +33,6 @@ Recommended
 
 ### 3. Short summary
 
-[Link to short Summary](https://docs.google.com/document/d/1FMse4arwWqHZY-OoSY2a7OfoyPlv3YPVTlg3OjYeRkI/edit?usp=sharing)
-
 Required
 - Describe your project in 280 characters or less.
 - Choose one data visualization (static image or animated gif) from your blog post.
@@ -44,6 +42,7 @@ Recommended
 - Share your short project summary on Twitter or LinkedIn, and link to your blog post.
 
 ### 4. Portfolio
+[Portfolio Site](https://bundickm.github.io/)
 Required
 - Add your short summary to your portfolio site.
 - Link from your portfolio site to your blog post and code.
