@@ -32,6 +32,9 @@ Recommended
 - Keep it simple. Don’t use machine learning. (You’ll do this in future projects!)
 
 ### 3. Short summary
+
+[Link to short Summary](https://docs.google.com/document/d/1FMse4arwWqHZY-OoSY2a7OfoyPlv3YPVTlg3OjYeRkI/edit?usp=sharing)
+
 Required
 - Describe your project in 280 characters or less.
 - Choose one data visualization (static image or animated gif) from your blog post.
