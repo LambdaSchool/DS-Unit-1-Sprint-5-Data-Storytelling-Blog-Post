@@ -121,3 +121,8 @@ Friday, Sprint 5 — PM
 # Add a link to your portfolio 
 
 [Example Link](http://www.dsglossary.com)
+
+# My Github and Medium
+# Github: (https://tbradshaw91.github.io/2019-04-18-deartech/)
+# Medium: (https://medium.com/@tlbradshaw91/dear-technology-its-not-you-it-s-me-8d27ff3fc3c5)
+# Linkedin Post: (https://www.linkedin.com/feed/update/urn:li:activity:6524886169887608832/)
