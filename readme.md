@@ -11,6 +11,8 @@ _The project has five parts. For each part, we've listed what's required to pass
 
 ### 1. Blog post
 
+[blog post link](https://medium.com/@bundickm/the-secrets-of-catan-ed203a9a7c61)
+
 Required
 - Choose your own topic and data.
 - Write a blog post with at least two data visualizations, to communicate insights on your topic.
