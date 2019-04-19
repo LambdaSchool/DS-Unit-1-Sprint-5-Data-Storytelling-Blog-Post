@@ -1,3 +1,13 @@
+Josh Mancuso DS3 Data Storytelling Project:
+
+Link to blog on Medium: https://medium.com/@jmancuso82/football-weather-diving-into-the-effects-of-weather-on-nfl-qb-performance-f0edb420623d
+
+Link to Github Repo for the project:
+https://github.com/Nolanole/NFL-Weather-Project
+
+Link to portfolio post:
+https://nolanole.github.io/2019-04-19-NFL_WeatherBlog/
+
 # DS Data Storytelling portfolio project
 
 Contents
