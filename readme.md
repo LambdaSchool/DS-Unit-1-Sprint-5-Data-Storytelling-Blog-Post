@@ -120,4 +120,4 @@ Friday, Sprint 5 — PM
 
 # Add a link to your portfolio 
 
-[Example Link](http://www.dsglossary.com)
+[Steve's Portfolio](https://smsinclair.github.io)
