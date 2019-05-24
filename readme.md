@@ -16,7 +16,7 @@ Required
 - Write a blog post with at least two data visualizations, to communicate insights on your topic.
 - Publish your post on Medium or your portfolio site.
 - Don’t use data from Kaggle competitions or popular “toy” datasets.
-
+https://medium.com/@alvinwalker314/what-areas-of-military-development-did-the-winners-of-wwii-focus-on-most-2545895e07ef
 Recommended
 - Don't write a ["wall of text."](https://www.theonion.com/nation-shudders-at-large-block-of-uninterrupted-text-1819571366) Format your post to be [skimmable](https://www.nngroup.com/articles/how-users-read-on-the-web/). Edit it to be [readable](http://www.hemingwayapp.com/).
 - Describe both your insights and your process, but focus more on the insights. Don’t include much code, if any, in your blog post.
@@ -25,7 +25,7 @@ Recommended
 Required
 - Create Python notebook(s) to wrangle, analyze, and visualize your data.
 - Push your notebook(s) to your GitHub.
-
+https://colab.research.google.com/github/alvinwalker314/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Copy_of_Copy_of_Untitled3.ipynb?authuser=1
 Recommended
 - Keep it simple. Don’t use machine learning. (You’ll do this in future projects!)
 
@@ -42,7 +42,7 @@ Recommended
 Required
 - Add your short summary to your portfolio site.
 - Link from your portfolio site to your blog post and code.
-
+https://alvinwalker314.github.io/
 Recommended
 - Host your site with GitHub Pages.
 - Include your name, bio, and contact info on your site.
