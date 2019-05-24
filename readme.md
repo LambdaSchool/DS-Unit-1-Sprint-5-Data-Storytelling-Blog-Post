@@ -120,4 +120,4 @@ Friday, Sprint 5 — PM
 
 # Add a link to your portfolio 
 
-[Example Link](http://www.dsglossary.com)
+[Richmond Macaspac ](https://datascistuff.somethingtechie.com/posts/uber-movement/)
