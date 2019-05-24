@@ -120,4 +120,6 @@ Friday, Sprint 5 — PM
 
 # Add a link to your portfolio 
 
-[Example Link](http://www.dsglossary.com)
+[Blog Post](https://medium.com/@yam39/shogi-statistics-edd586168ca4)
+
+[Code and data repository](https://github.com/dzkha/Shogi-Post)
