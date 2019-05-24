@@ -121,3 +121,4 @@ Friday, Sprint 5 — PM
 # Add a link to your portfolio 
 
 [Steve's Portfolio](https://smsinclair.github.io)
+[Movie Genre Visualization Repo](https://github.com/SMSinclair/Movie-Genre-Visualization)
