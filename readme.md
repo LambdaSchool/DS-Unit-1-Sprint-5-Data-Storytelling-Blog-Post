@@ -1,5 +1,6 @@
 # DS Data Storytelling portfolio project
 
+Blog post link: <https://dwightchurchill.github.io/2019-05-23-first-post/>
 Contents
 - [Deliverables](#deliverables)
 - [Milestones](#milestones)
