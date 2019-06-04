@@ -52,7 +52,7 @@ Required
 - Give a two minute presentation on Zoom for your cohort.
 
 Recommended
-- Practice beforehand, out loud and timed. 
+- Practice beforehand, out loud and timed.
 
 
 ## Milestones
@@ -118,6 +118,7 @@ Friday, Sprint 5 — PM
 - [Peyton Runyan](https://peytonrunyan.github.io/aboutme/)
 - [Zach Angell](https://zangell44.github.io/aboutme/)
 
-# Add a link to your portfolio 
+# Add a link to your portfolio
 
-[Example Link](http://www.dsglossary.com)
+https://medium.com/@chris.louie/can-a-starbucks-a-day-keep-the-doctor-away-b2b71c4baa70
+https://github.com/Ruwai/Starbucks-EDA
