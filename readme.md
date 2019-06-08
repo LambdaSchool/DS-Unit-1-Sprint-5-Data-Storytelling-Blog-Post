@@ -1,3 +1,5 @@
+https://medium.com/@lukefreemanprotonmail/ww2-death-of-the-masses-297fb846a1f5
+
 # DS Data Storytelling portfolio project
 
 Contents
