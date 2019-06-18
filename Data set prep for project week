@@ -1,0 +1,333 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled11.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/blob/master/Data%20set%20prep%20for%20project%20week\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "xYs2TJh1gHir",
+        "colab_type": "text"
+      },
+      "source": [
+        "##Data sets for project week\n",
+        "There are 2 data sets that I will be using.\n",
+        "\n",
+        "\n",
+        "1.   Artwork list scrapped from the artists website at http://damienhirst.com/ which will be used in place of an offical catalog raisonne.\n",
+        "2.   Auction history scrapped from Mutual Art's Auction Price Database https://www.mutualart.com/ \n",
+        "\n",
+        "The data has not been cleaned yet, here is a partial cleaning to do list:\n",
+        "\n",
+        "\n",
+        "1.   remove year from Title column in auction_history df\n",
+        "2.   remove circa and ranges for data created column\n",
+        "3.   turn size into heigth, width, and depth columns\n",
+        "4.   make signed either Y/N and add a column for any edition numbers\n",
+        "5.   turn estimate range into low estimate, high estimate, and currency\n",
+        "6.   remove currency from realized price\n",
+        "7.   convert estimates and realized prices to USD\n",
+        "8.   create a location/region column using auction house (New York, London, Paris, etc. or US, UK, EU, etc.)\n",
+        "9.   use cleaned Titles column to merge the Series column from the raisonne csv to the auction history df\n",
+        "\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "iiCI9HIDbzW3",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import pandas as pd"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4xce9dCSeHAQ",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 204
+        },
+        "outputId": "598f47c0-1dc6-427d-f5ec-ea66a24b0646"
+      },
+      "source": [
+        "raisonne = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/DamienHist_artwork_list.csv')\n",
+        "raisonne.head()"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Year</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Materials and Medium</th>\n",
+              "      <th>Series</th>\n",
+              "      <th>Link to Image</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Emergency</td>\n",
+              "      <td>2014</td>\n",
+              "      <td>2438 x 2134 mm | 96 x 84 in</td>\n",
+              "      <td>Flexible retroreflective and fluorescent non-r...</td>\n",
+              "      <td>Emergency Paintings</td>\n",
+              "      <td>http://damienhirst.com/images/hirstimage/Emerg...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Trauma</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>305 x 305 mm | 12 x 12 in</td>\n",
+              "      <td>Flexible PVC vehicle vinyl and lacquer on canvas</td>\n",
+              "      <td>Emergency Paintings</td>\n",
+              "      <td>http://damienhirst.com/images/hirstimage/Traum...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Police</td>\n",
+              "      <td>2014</td>\n",
+              "      <td>2438 x 2134 mm | 96 x 84 in</td>\n",
+              "      <td>Flexible crystal grade micro prismatic vinyl o...</td>\n",
+              "      <td>Emergency Paintings</td>\n",
+              "      <td>http://damienhirst.com/images/hirstimage/Polic...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Up</td>\n",
+              "      <td>2015</td>\n",
+              "      <td>305 x 305 mm | 12 x 12 in</td>\n",
+              "      <td>Flexible crystal grade micro prismatic vinyl o...</td>\n",
+              "      <td>Emergency Paintings</td>\n",
+              "      <td>http://damienhirst.com/images/hirstimage/Up_1_...</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Injury</td>\n",
+              "      <td>2016</td>\n",
+              "      <td>130 x 565 mm | 5.1 x 22.2 in</td>\n",
+              "      <td>Flexible crystal grade micro prismatic vinyl a...</td>\n",
+              "      <td>Emergency Paintings</td>\n",
+              "      <td>http://damienhirst.com/images/hirstimage/Injur...</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "       Title  ...                                      Link to Image\n",
+              "0  Emergency  ...  http://damienhirst.com/images/hirstimage/Emerg...\n",
+              "1     Trauma  ...  http://damienhirst.com/images/hirstimage/Traum...\n",
+              "2     Police  ...  http://damienhirst.com/images/hirstimage/Polic...\n",
+              "3         Up  ...  http://damienhirst.com/images/hirstimage/Up_1_...\n",
+              "4     Injury  ...  http://damienhirst.com/images/hirstimage/Injur...\n",
+              "\n",
+              "[5 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AaOpUg-SeSr3",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 289
+        },
+        "outputId": "26662a21-088b-45e1-c216-14dcc4843a3a"
+      },
+      "source": [
+        "auction_history = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/Damien_Hirst_Auction_Results.csv')\n",
+        "auction_history.drop('ID_Batch_Loop#', axis=1, inplace=True)\n",
+        "auction_history.head()"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Estimate_Range</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>SPOT DRAWING NO. 2, 1990</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>80,000 - 120,000 GBP</td>\n",
+              "      <td>175,000 GBP</td>\n",
+              "      <td>Contemporary Art Day Auction</td>\n",
+              "      <td>Sotheby's London</td>\n",
+              "      <td>Jun. 27, 2018</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Red #7, 1987</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>800 - 1,200 USD</td>\n",
+              "      <td>450 USD*</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Yellow #6, 1987</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>800 - 1,200 USD</td>\n",
+              "      <td>475 USD*</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Pharmacy, circa1990</td>\n",
+              "      <td>circa1990</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1,500 - 2,000 GBP</td>\n",
+              "      <td>1,500 GBP</td>\n",
+              "      <td>Mixed Media: 20th Century Art</td>\n",
+              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
+              "      <td>Jul. 16, 2015</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>The Complete Spot Paintings, 1986-2011</td>\n",
+              "      <td>1986-2011</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>305 x 244mm</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>1,000 - 1,500 GBP</td>\n",
+              "      <td>2,375 GBP</td>\n",
+              "      <td>Prints &amp; Multiples</td>\n",
+              "      <td>Bonhams Knightsbridge</td>\n",
+              "      <td>Jun. 03, 2015</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Artist_Name  ...      Sale_Date\n",
+              "0  Damien Hirst  ...  Jun. 27, 2018\n",
+              "1  Damien Hirst  ...  Jun. 04, 2017\n",
+              "2  Damien Hirst  ...  Jun. 04, 2017\n",
+              "3  Damien Hirst  ...  Jul. 16, 2015\n",
+              "4  Damien Hirst  ...  Jun. 03, 2015\n",
+              "\n",
+              "[5 rows x 11 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 10
+        }
+      ]
+    }
+  ]
+}
