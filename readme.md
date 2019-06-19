@@ -59,36 +59,33 @@ Recommended
 
 _These milestones are suggested to help you have confidence that you're on track for a great project!_
 
-Friday, Sprint 2
-- Look at examples
-
-Thursday, Sprint 3
+End of Sprint 2
+- Look at examples of past projects
 - Start your GitHub Pages portfolio site
 
-Thursday, Sprint 4
+End of Sprint 4
 - Finalize your topic and dataset
-
-Friday, Sprint 4
 - Write the first draft of your project description, for your short summary
 
-Monday, Sprint 5 — start of day
+Module 1, Sprint 5
 - Begin to analyze and visualize your data
 
-Tuesday, Sprint 5 — end of day
+Module 2, Sprint 5 - end of day
 - Revise your description for your short summary
 - Create your first annotated visualization for your short summary
 
-Thursday, Sprint 5 — end of day
+Module 4, Sprint 5 — end of day
 - Complete your code and blog post
+- Share your draft with classmates for feedback
 
-Friday, Sprint 5 — AM
+Before Class - Last day of Sprint 5 
 - Practice your 2 minute presentation
 - Publish your blog post on Medium or GitHub Pages
 - Push your code to GitHub
 - Add your short summary to your porfolio site
 - Link from your portfolio site to your blog post and code
 
-Friday, Sprint 5 — PM
+During Class - Last day of Sprint 5
 - Give your 2 minute presentation for your cohort
 
 ## Examples
@@ -118,6 +115,38 @@ Friday, Sprint 5 — PM
 - [Peyton Runyan](https://peytonrunyan.github.io/aboutme/)
 - [Zach Angell](https://zangell44.github.io/aboutme/)
 
-# Add a link to your portfolio 
+
+## Select Projects from DS2
+
+- [Dmitriy Kavyazin, Analyzing Prescription Rates in Medicaid Drug Utilization Data](https://medium.com/@dmitriy.kavyazin/what-drugs-are-people-on-56ce31b40a4f)
+
+- [Trista Paul, Movie Night Coming Up? An Analysis of What Goes Into Bad IMDb Ratings](https://medium.com/@tristap98/movie-night-coming-up-an-analysis-of-what-goes-into-bad-imdb-ratings-7f290cac2e7f)
+
+- [Mac Scheffer, Play Calling in the NFL: The Road to Improvement](https://blog.usejournal.com/play-calling-in-the-nfl-the-road-to-improvement-fabeb4da7eb8)
+
+- [Daniel Carter, Is ‘Buy and Hold’ a Good Investment Strategy?](https://medium.com/@daniel_carter/is-buy-and-hold-a-good-investment-strategy-fe2d43266bb5)
+
+- [Chris Luedtke, The Ultimate Day of Chicago Bikeshare](https://chrisluedtke.github.io/divvy-data.html)
+
+## Select Projects from DS3
+
+- [Michael Brady, Peak Kickstarter? What 182K Kickstarter Campaigns Tell Us](https://medium.com/@mikebrady44/peak-kickstarter-35dc7f242a2a)
+
+- [Connor Heraty, An Armistice in Chicago’s Drug War](https://medium.com/@connorpheraty/an-armistice-in-chicagos-drug-war-4245bcd9d66f)
+
+- [Lily Su, Motor Vehicle Injuries and Deaths from November 2018 — April 2019](https://medium.com/@lilysu/motor-vehicle-injuries-and-deaths-from-nov-1-2018-apr-8-2019-a3a50b5e063c)
+
+- [Alexander Witt, The Urban Sanitation Windfall](https://alex-witt.github.io/2019-04-19-dc_parking/)
+
+- [Dustin Yang, LA Parking — Worth the risk?](https://medium.com/@yangdustin5/la-parking-worth-the-risk-207d167c313)
+
+- [Liv Johnson, Untapped Potential: Making the U.S. An Energy Leader](https://blog.usejournal.com/untapped-potential-making-the-u-s-an-energy-leader-378b387263fa)
+
+
+- [Patricia Bradshaw, Dear Technology, It’s Not You… It’s Me](https://blog.usejournal.com/dear-technology-its-not-you-it-s-me-8d27ff3fc3c5?sk=57ef664c141253f770e4a2833c5eabff)
+
+- [Micheal Bundick, The Secrets of Catan:](https://medium.com/@bundickm/the-secrets-of-catan-ed203a9a7c61)
+
+# Add a link to your portfolio:
 
 [Example Link](http://www.dsglossary.com)
