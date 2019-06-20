@@ -34,8 +34,8 @@
         "2.   ~~remove circa and ranges for data created column~~\n",
         "3.   turn size into heigth, width, and depth columns\n",
         "4.   make signed either Y/N and add a column for any edition numbers\n",
-        "5.   turn estimate range into low estimate, high estimate, and currency\n",
-        "6.   remove currency from realized price\n",
+        "5.   ~~turn estimate range into low estimate, high estimate, and currency~~\n",
+        "6.   ~~remove currency from realized price~~\n",
         "7.   convert estimates and realized prices to USD\n",
         "8.   create a location/region column using auction house (New York, London, Paris, etc. or US, UK, EU, etc.)\n",
         "9.   use cleaned Titles column to merge the Series column from the raisonne csv to the auction history df\n",
@@ -73,7 +73,7 @@
       "metadata": {
         "id": "4xce9dCSeHAQ",
         "colab_type": "code",
-        "outputId": "3298ecea-1650-49b4-a093-9f6aeb7fecaa",
+        "outputId": "4f2185de-5525-436a-a2f7-b9868e5d321a",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 204
@@ -83,7 +83,7 @@
         "raisonne = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/DamienHist_artwork_list.csv')\n",
         "raisonne.head()"
       ],
-      "execution_count": 3,
+      "execution_count": 116,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -179,7 +179,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 3
+          "execution_count": 116
         }
       ]
     },
@@ -188,7 +188,7 @@
       "metadata": {
         "id": "Jveol8hqSx2K",
         "colab_type": "code",
-        "outputId": "e64e0997-d001-416e-cfe8-c2c57b0182e9",
+        "outputId": "62277da1-7aca-40ad-e071-ce2daf94940b",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
@@ -197,7 +197,7 @@
       "source": [
         "raisonne.shape"
       ],
-      "execution_count": 4,
+      "execution_count": 117,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -209,7 +209,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 4
+          "execution_count": 117
         }
       ]
     },
@@ -218,7 +218,7 @@
       "metadata": {
         "id": "AaOpUg-SeSr3",
         "colab_type": "code",
-        "outputId": "255e75c6-392a-4020-ecbe-1fe762670b43",
+        "outputId": "1f184a94-67a0-474d-9b9d-ac5ad14cff31",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 289
@@ -229,7 +229,7 @@
         "auction_history.drop('ID_Batch_Loop#', axis=1, inplace=True)\n",
         "auction_history.head()"
       ],
-      "execution_count": 17,
+      "execution_count": 149,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -355,7 +355,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 17
+          "execution_count": 149
         }
       ]
     },
@@ -364,7 +364,7 @@
       "metadata": {
         "id": "PsmWpi2JS5vB",
         "colab_type": "code",
-        "outputId": "07c1769b-ee7f-415f-85e5-8e2d5aa07795",
+        "outputId": "ca0c7e8b-54a2-4667-9ab9-bf2ed96eb08b",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
@@ -373,7 +373,7 @@
       "source": [
         "auction_history.shape"
       ],
-      "execution_count": 8,
+      "execution_count": 119,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -385,7 +385,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 8
+          "execution_count": 119
         }
       ]
     },
@@ -424,9 +424,19 @@
         "      pos = (auction_history['Title'][i].find('FullFormat') -2)\n",
         "      auction_history['Title'][i] = auction_history['Title'][i][:pos]\n",
         "    \n",
-        "  return titles\n",
-        "\n",
-        "\n",
+        "  return titles"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XHwXO9fw7WXN",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
         "def clean_date_created(dates):\n",
         "  \"\"\"\n",
         "  takes a list, the date created column from the auction history dataframe, loops\n",
@@ -458,6 +468,104 @@
         "    dates[i] = year\n",
         "    \n",
         "  return dates"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "FeNwvs-o7TDG",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "def clean_size(size):\n",
+        "  \"\"\"\n",
+        "  take the size column, pull out height, width, depth, and diameter measurements. \n",
+        "  Drop the existing size column and replace it with the new columns for height, \n",
+        "  width, and depth\n",
+        "  :param: size = list\n",
+        "  return: lists = heigth, width, depth, and diameter as new columns in the \n",
+        "  auction_history dataframe\n",
+        "  \"\"\"\n",
+        "  return"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZI9kfkGC7Qvu",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "def clean_estimate(estimate):\n",
+        "  \"\"\"\n",
+        "  takes the estimate column, adds low estimate, high estimate, and currency\n",
+        "  columns to the dataframe and drops the original estimate column.\n",
+        "  :param: estimate = list (df column)\n",
+        "  returns: none, adds the columns and drop the column when called\n",
+        "  \"\"\"\n",
+        "  low = []\n",
+        "  high = []\n",
+        "  currency = []\n",
+        "\n",
+        "  for i in range(len(estimate)):\n",
+        "    est = estimate[i]\n",
+        "    try:\n",
+        "      temp = est.split()\n",
+        "      if len(temp) == 4:\n",
+        "        low.append(temp[0])\n",
+        "        high.append(temp[2])\n",
+        "        currency.append(temp[3])\n",
+        "      elif len(temp) == 2:\n",
+        "        low.append(temp[0])\n",
+        "        high.append(np.nan)\n",
+        "        currency.append(temp[1])\n",
+        "      else:\n",
+        "        low.append(np.nan)\n",
+        "        high.append(np.nan)\n",
+        "        currency.append(np.nan)\n",
+        "    except:\n",
+        "      pass\n",
+        "    \n",
+        "  auction_history['Low Estimate'] = low\n",
+        "  auction_history['High Estimate'] = high\n",
+        "  auction_history['Currency'] = currency\n",
+        "  auction_history.drop(['Estimate_Range'], axis=1, inplace=True)\n",
+        "  return"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "WwnnM7Ek7L4O",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "def clean_realized_price(prices):\n",
+        "  \"\"\"\n",
+        "  takes realized prices from df and removes currency leaving just the numeric value\n",
+        "  :param: prices = list, df column realized_price\n",
+        "  return: list\n",
+        "  \"\"\"\n",
+        "  for i in range(len(prices)):\n",
+        "    try:\n",
+        "      temp = prices[i].split()\n",
+        "      if len(temp) < 2:\n",
+        "        prices[i] = -1\n",
+        "      else:\n",
+        "        prices[i] = temp[0]\n",
+        "    except:\n",
+        "      pass\n",
+        "  \n",
+        "  return prices"
       ],
       "execution_count": 0,
       "outputs": []
@@ -502,6 +610,38 @@
       "outputs": []
     },
     {
+      "cell_type": "code",
+      "metadata": {
+        "id": "t89KlPWc5G0X",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# use cleaning fucntion to clean estimate range column, drops estimate range and\n",
+        "# adds a low and high estimate column with a currency column\n",
+        "\n",
+        "clean_estimate(auction_history['Estimate_Range'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pqkjb78N7fH-",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "# use cleaning function to remove currency code from realized prices, lots that\n",
+        "# were withdrawn get a -1 value\n",
+        "\n",
+        "auction_history['Realized_Price'] = clean_realized_price(auction_history['Realized_Price'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
       "cell_type": "markdown",
       "metadata": {
         "id": "YA7BQL8YfPck",
@@ -514,18 +654,18 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "k7nnIIlpz0xd",
+        "id": "k-zJyExW0sKt",
         "colab_type": "code",
-        "outputId": "f42b5a76-1efd-42d2-9dda-2436dddf5da2",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 289
-        }
+          "height": 306
+        },
+        "outputId": "34ede7d7-8e94-4bb3-c2b0-60c02799b23e"
       },
       "source": [
         "auction_history.head()"
       ],
-      "execution_count": 16,
+      "execution_count": 154,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -555,11 +695,13 @@
               "      <th>Medium</th>\n",
               "      <th>Size</th>\n",
               "      <th>Signed_Edition</th>\n",
-              "      <th>Estimate_Range</th>\n",
               "      <th>Realized_Price</th>\n",
               "      <th>Sale</th>\n",
               "      <th>Auction_House</th>\n",
               "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
               "    </tr>\n",
               "  </thead>\n",
               "  <tbody>\n",
@@ -571,11 +713,13 @@
               "      <td>coloured pencil on paper</td>\n",
               "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
               "      <td>Signed</td>\n",
-              "      <td>80,000 - 120,000 GBP</td>\n",
-              "      <td>175,000 GBP</td>\n",
+              "      <td>175,000</td>\n",
               "      <td>Contemporary Art Day Auction</td>\n",
               "      <td>Sotheby's London</td>\n",
               "      <td>Jun. 27, 2018</td>\n",
+              "      <td>80,000</td>\n",
+              "      <td>120,000</td>\n",
+              "      <td>GBP</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>1</th>\n",
@@ -585,11 +729,13 @@
               "      <td>Color silkscreen on plywood in original</td>\n",
               "      <td>31.25 x 8 inches</td>\n",
               "      <td>from an edition of 500</td>\n",
-              "      <td>800 - 1,200 USD</td>\n",
-              "      <td>450 USD*</td>\n",
+              "      <td>450</td>\n",
               "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
               "      <td>Santa Monica Auctions</td>\n",
               "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>2</th>\n",
@@ -599,11 +745,13 @@
               "      <td>Color silkscreen on plywood in original bag</td>\n",
               "      <td>31.25 x 8 inches</td>\n",
               "      <td>from an edition of 500</td>\n",
-              "      <td>800 - 1,200 USD</td>\n",
-              "      <td>475 USD*</td>\n",
+              "      <td>475</td>\n",
               "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
               "      <td>Santa Monica Auctions</td>\n",
               "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>3</th>\n",
@@ -613,11 +761,13 @@
               "      <td>offset lithograph printed in colours</td>\n",
               "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
               "      <td>42/200</td>\n",
-              "      <td>1,500 - 2,000 GBP</td>\n",
-              "      <td>1,500 GBP</td>\n",
+              "      <td>1,500</td>\n",
               "      <td>Mixed Media: 20th Century Art</td>\n",
               "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
               "      <td>Jul. 16, 2015</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>2,000</td>\n",
+              "      <td>GBP</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>4</th>\n",
@@ -627,31 +777,101 @@
               "      <td>with butterfly and heart drawing on the slipca...</td>\n",
               "      <td>305 x 244mm</td>\n",
               "      <td>Signed</td>\n",
-              "      <td>1,000 - 1,500 GBP</td>\n",
-              "      <td>2,375 GBP</td>\n",
+              "      <td>2,375</td>\n",
               "      <td>Prints &amp; Multiples</td>\n",
               "      <td>Bonhams Knightsbridge</td>\n",
               "      <td>Jun. 03, 2015</td>\n",
+              "      <td>1,000</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>GBP</td>\n",
               "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
               "</div>"
             ],
             "text/plain": [
-              "    Artist_Name  ...      Sale_Date\n",
-              "0  Damien Hirst  ...  Jun. 27, 2018\n",
-              "1  Damien Hirst  ...  Jun. 04, 2017\n",
-              "2  Damien Hirst  ...  Jun. 04, 2017\n",
-              "3  Damien Hirst  ...  Jul. 16, 2015\n",
-              "4  Damien Hirst  ...  Jun. 03, 2015\n",
+              "    Artist_Name                             Title  ... High Estimate Currency\n",
+              "0  Damien Hirst                SPOT DRAWING NO. 2  ...       120,000      GBP\n",
+              "1  Damien Hirst         Supreme Skate Deck Red #7  ...         1,200      USD\n",
+              "2  Damien Hirst      Supreme Skate Deck Yellow #6  ...         1,200      USD\n",
+              "3  Damien Hirst                     Pharmacy, cir  ...         2,000      GBP\n",
+              "4  Damien Hirst  The Complete Spot Paintings, 198  ...         1,500      GBP\n",
               "\n",
-              "[5 rows x 11 columns]"
+              "[5 rows x 13 columns]"
             ]
           },
           "metadata": {
             "tags": []
           },
-          "execution_count": 16
+          "execution_count": 154
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "z5k_mmhQJl2y",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "for i in range(len(auction_history['Currency'])):\n",
+        "  try:\n",
+        "    if '*' in auction_history['Currency'][i]:\n",
+        "      auction_history['Currency'][i] = 'EUR'\n",
+        "    if 'Sold' in auction_history['Currency'][i]:\n",
+        "      auction_history['Currency'][i] = np.nan\n",
+        "  except:\n",
+        "    pass"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "emyBDjN1HX0N",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 340
+        },
+        "outputId": "787af36c-c7a0-4713-88a1-71466d0e2e33"
+      },
+      "source": [
+        "auction_history['Currency'].value_counts()"
+      ],
+      "execution_count": 159,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "GBP    2908\n",
+              "USD    1887\n",
+              "EUR    1238\n",
+              "HKD     121\n",
+              "KRW      75\n",
+              "CHF      67\n",
+              "JPY      55\n",
+              "AUD      48\n",
+              "SEK      40\n",
+              "CNY      28\n",
+              "TWD      14\n",
+              "NZD      13\n",
+              "DKK      12\n",
+              "NOK       7\n",
+              "MXN       7\n",
+              "ZAR       4\n",
+              "SGD       4\n",
+              "CZK       2\n",
+              "Name: Currency, dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 159
         }
       ]
     }
