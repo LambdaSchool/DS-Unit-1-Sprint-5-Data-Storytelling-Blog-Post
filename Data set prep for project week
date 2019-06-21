@@ -73,17 +73,17 @@
       "metadata": {
         "id": "4xce9dCSeHAQ",
         "colab_type": "code",
-        "outputId": "4f2185de-5525-436a-a2f7-b9868e5d321a",
+        "outputId": "49553107-349b-4017-f68d-21122091d749",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 204
+          "height": 195
         }
       },
       "source": [
         "raisonne = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/DamienHist_artwork_list.csv')\n",
         "raisonne.head()"
       ],
-      "execution_count": 116,
+      "execution_count": 101,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -179,7 +179,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 116
+          "execution_count": 101
         }
       ]
     },
@@ -188,7 +188,7 @@
       "metadata": {
         "id": "Jveol8hqSx2K",
         "colab_type": "code",
-        "outputId": "62277da1-7aca-40ad-e071-ce2daf94940b",
+        "outputId": "0175a171-a83d-44d4-f260-1e9bc97e2870",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
@@ -197,7 +197,7 @@
       "source": [
         "raisonne.shape"
       ],
-      "execution_count": 117,
+      "execution_count": 3,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -209,7 +209,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 117
+          "execution_count": 3
         }
       ]
     },
@@ -218,10 +218,10 @@
       "metadata": {
         "id": "AaOpUg-SeSr3",
         "colab_type": "code",
-        "outputId": "1f184a94-67a0-474d-9b9d-ac5ad14cff31",
+        "outputId": "d2917cce-b0b2-40a5-ceab-2ceba5f03551",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 289
+          "height": 397
         }
       },
       "source": [
@@ -229,7 +229,7 @@
         "auction_history.drop('ID_Batch_Loop#', axis=1, inplace=True)\n",
         "auction_history.head()"
       ],
-      "execution_count": 149,
+      "execution_count": 140,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -355,7 +355,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 149
+          "execution_count": 140
         }
       ]
     },
@@ -364,7 +364,7 @@
       "metadata": {
         "id": "PsmWpi2JS5vB",
         "colab_type": "code",
-        "outputId": "ca0c7e8b-54a2-4667-9ab9-bf2ed96eb08b",
+        "outputId": "41b8c1f1-0d1f-46be-b932-26a81499662a",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
@@ -373,7 +373,7 @@
       "source": [
         "auction_history.shape"
       ],
-      "execution_count": 119,
+      "execution_count": 5,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -385,7 +385,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 119
+          "execution_count": 5
         }
       ]
     },
@@ -418,11 +418,23 @@
         "  return: list, cleaned titles with dates removed\n",
         "  \"\"\"\n",
         "  for i in range(len(titles)):\n",
-        "    titles[i] = titles[i][:-6]\n",
+        "    if 'circa' in auction_history['Title'][i]:\n",
+        "      pos = (auction_history['Title'][i].find('circa') -2)\n",
+        "      auction_history['Title'][i] = auction_history['Title'][i][:pos]\n",
+        "      \n",
+        "    elif 'Circa' in auction_history['Title'][i]:\n",
+        "      pos = (auction_history['Title'][i].find('Circa') -2)\n",
+        "      auction_history['Title'][i] = auction_history['Title'][i][:pos]\n",
         "    \n",
-        "    if 'FullFormat' in auction_history['Title'][i]:\n",
+        "    elif 'FullFormat' in auction_history['Title'][i]:\n",
         "      pos = (auction_history['Title'][i].find('FullFormat') -2)\n",
         "      auction_history['Title'][i] = auction_history['Title'][i][:pos]\n",
+        "      \n",
+        "    elif auction_history['Title'][i][-5] == '-':\n",
+        "      auction_history['Title'][i] = auction_history['Title'][i][:-11]\n",
+        "    \n",
+        "    else:  \n",
+        "      titles[i] = titles[i][:-6]\n",
         "    \n",
         "  return titles"
       ],
@@ -656,16 +668,16 @@
       "metadata": {
         "id": "k-zJyExW0sKt",
         "colab_type": "code",
+        "outputId": "f6fb7376-ab7e-4258-fc8b-cc85c73b410c",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 306
-        },
-        "outputId": "34ede7d7-8e94-4bb3-c2b0-60c02799b23e"
+          "height": 430
+        }
       },
       "source": [
         "auction_history.head()"
       ],
-      "execution_count": 154,
+      "execution_count": 145,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -756,7 +768,7 @@
               "    <tr>\n",
               "      <th>3</th>\n",
               "      <td>Damien Hirst</td>\n",
-              "      <td>Pharmacy, cir</td>\n",
+              "      <td>Pharmacy</td>\n",
               "      <td>1990</td>\n",
               "      <td>offset lithograph printed in colours</td>\n",
               "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
@@ -772,7 +784,7 @@
               "    <tr>\n",
               "      <th>4</th>\n",
               "      <td>Damien Hirst</td>\n",
-              "      <td>The Complete Spot Paintings, 198</td>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
               "      <td>2011</td>\n",
               "      <td>with butterfly and heart drawing on the slipca...</td>\n",
               "      <td>305 x 244mm</td>\n",
@@ -790,12 +802,12 @@
               "</div>"
             ],
             "text/plain": [
-              "    Artist_Name                             Title  ... High Estimate Currency\n",
-              "0  Damien Hirst                SPOT DRAWING NO. 2  ...       120,000      GBP\n",
-              "1  Damien Hirst         Supreme Skate Deck Red #7  ...         1,200      USD\n",
-              "2  Damien Hirst      Supreme Skate Deck Yellow #6  ...         1,200      USD\n",
-              "3  Damien Hirst                     Pharmacy, cir  ...         2,000      GBP\n",
-              "4  Damien Hirst  The Complete Spot Paintings, 198  ...         1,500      GBP\n",
+              "    Artist_Name                         Title  ... High Estimate Currency\n",
+              "0  Damien Hirst            SPOT DRAWING NO. 2  ...       120,000      GBP\n",
+              "1  Damien Hirst     Supreme Skate Deck Red #7  ...         1,200      USD\n",
+              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...         1,200      USD\n",
+              "3  Damien Hirst                      Pharmacy  ...         2,000      GBP\n",
+              "4  Damien Hirst   The Complete Spot Paintings  ...         1,500      GBP\n",
               "\n",
               "[5 rows x 13 columns]"
             ]
@@ -803,7 +815,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 154
+          "execution_count": 145
         }
       ]
     },
@@ -830,16 +842,695 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "emyBDjN1HX0N",
+        "id": "yCk5FAT5EEEO",
         "colab_type": "code",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 340
+          "height": 430
         },
-        "outputId": "787af36c-c7a0-4713-88a1-71466d0e2e33"
+        "outputId": "25196b4c-0e90-4cc7-e836-1479a8e14b67"
       },
       "source": [
-        "auction_history['Currency'].value_counts()"
+        "auction_history.head()"
+      ],
+      "execution_count": 147,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175,000</td>\n",
+              "      <td>Contemporary Art Day Auction</td>\n",
+              "      <td>Sotheby's London</td>\n",
+              "      <td>Jun. 27, 2018</td>\n",
+              "      <td>80,000</td>\n",
+              "      <td>120,000</td>\n",
+              "      <td>GBP</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>Mixed Media: 20th Century Art</td>\n",
+              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
+              "      <td>Jul. 16, 2015</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>2,000</td>\n",
+              "      <td>GBP</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>2011</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>305 x 244mm</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>2,375</td>\n",
+              "      <td>Prints &amp; Multiples</td>\n",
+              "      <td>Bonhams Knightsbridge</td>\n",
+              "      <td>Jun. 03, 2015</td>\n",
+              "      <td>1,000</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>GBP</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Artist_Name                         Title  ... High Estimate Currency\n",
+              "0  Damien Hirst            SPOT DRAWING NO. 2  ...       120,000      GBP\n",
+              "1  Damien Hirst     Supreme Skate Deck Red #7  ...         1,200      USD\n",
+              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...         1,200      USD\n",
+              "3  Damien Hirst                      Pharmacy  ...         2,000      GBP\n",
+              "4  Damien Hirst   The Complete Spot Paintings  ...         1,500      GBP\n",
+              "\n",
+              "[5 rows x 13 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 147
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "phF9mqUKEr4O",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 67
+        },
+        "outputId": "5dc8f879-d88e-4fb9-8113-b95346352adf"
+      },
+      "source": [
+        "currency_list = auction_history['Currency'].unique()\n",
+        "currency_list"
+      ],
+      "execution_count": 148,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array(['GBP', 'USD', 'EUR', 'HKD', 'CNY', 'CHF', 'SEK', 'JPY', nan, 'KRW',\n",
+              "       'AUD', 'NOK', 'ZAR', 'DKK', 'NZD', 'TWD', 'SGD', 'MXN', 'CZK'],\n",
+              "      dtype=object)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 148
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "A7ZG40EqF8S3",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "country_dict = {'GBP': 'United Kingdom', 'USD': 'United States', 'EUR': 'Europe', 'HKD': 'Hong Kong', 'CNY': 'China', 'CHF': 'Switzerland',\n",
+        "             'SEK': 'Sweden', 'JPY': 'Japan', 'KRW': 'South Korea'}"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "YTJpAdngHus4",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "country = []\n",
+        "currency = auction_history['Currency']\n",
+        "\n",
+        "for i in range(len(currency)):\n",
+        "  try:\n",
+        "    country.append(country_dict.get(currency[i]))\n",
+        "  except:\n",
+        "    country.append(np.nan)\n",
+        "    \n",
+        "auction_history['Country'] = country"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mhqQQN8gJMwf",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 481
+        },
+        "outputId": "6880fd45-3c8f-4333-f350-e63d0d73adc3"
+      },
+      "source": [
+        "auction_history.head()"
+      ],
+      "execution_count": 151,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175,000</td>\n",
+              "      <td>Contemporary Art Day Auction</td>\n",
+              "      <td>Sotheby's London</td>\n",
+              "      <td>Jun. 27, 2018</td>\n",
+              "      <td>80,000</td>\n",
+              "      <td>120,000</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>Jun. 04, 2017</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>Mixed Media: 20th Century Art</td>\n",
+              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
+              "      <td>Jul. 16, 2015</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>2,000</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>2011</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>305 x 244mm</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>2,375</td>\n",
+              "      <td>Prints &amp; Multiples</td>\n",
+              "      <td>Bonhams Knightsbridge</td>\n",
+              "      <td>Jun. 03, 2015</td>\n",
+              "      <td>1,000</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Artist_Name                         Title  ... Currency         Country\n",
+              "0  Damien Hirst            SPOT DRAWING NO. 2  ...      GBP  United Kingdom\n",
+              "1  Damien Hirst     Supreme Skate Deck Red #7  ...      USD   United States\n",
+              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...      USD   United States\n",
+              "3  Damien Hirst                      Pharmacy  ...      GBP  United Kingdom\n",
+              "4  Damien Hirst   The Complete Spot Paintings  ...      GBP  United Kingdom\n",
+              "\n",
+              "[5 rows x 14 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 151
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Xk_oZygFLlID",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "sale = auction_history['Sale_Date']\n",
+        "for i in range(len(sale)):\n",
+        "  try:\n",
+        "    if 'no' in sale[i]:\n",
+        "      sale[i] = np.nan\n",
+        "  except:\n",
+        "    pass"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zZWmsqWrRYZw",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['Sale_Date'] = pd.to_datetime(auction_history['Sale_Date'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "saDvwNvsSN8f",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 269
+        },
+        "outputId": "30e68852-5714-4749-b4a1-c25d48339550"
+      },
+      "source": [
+        "auction_history.dtypes"
+      ],
+      "execution_count": 154,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Artist_Name               object\n",
+              "Title                     object\n",
+              "Date_Created              object\n",
+              "Medium                    object\n",
+              "Size                      object\n",
+              "Signed_Edition            object\n",
+              "Realized_Price            object\n",
+              "Sale                      object\n",
+              "Auction_House             object\n",
+              "Sale_Date         datetime64[ns]\n",
+              "Low Estimate              object\n",
+              "High Estimate             object\n",
+              "Currency                  object\n",
+              "Country                   object\n",
+              "dtype: object"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 154
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nieXDPAOfRsW",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "price = []\n",
+        "\n",
+        "for i in range(len(auction_history['Realized_Price'])):\n",
+        "  try:\n",
+        "    if 'Not' in auction_history['Realized_Price'][i]:\n",
+        "      price.append(0)\n",
+        "    elif 'not' in auction_history['Realized_Price'][i]:\n",
+        "      price.append(0)\n",
+        "    else:\n",
+        "      price.append(auction_history['Realized_Price'][i])\n",
+        "  except:\n",
+        "    price.append(0)\n",
+        "\n",
+        "auction_history['Realized_Price'] = price"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GFh7Qt41hXSq",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 481
+        },
+        "outputId": "977f12c8-0954-4837-bc46-b5569a48977f"
+      },
+      "source": [
+        "auction_history.head()"
+      ],
+      "execution_count": 202,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>Contemporary Art Day Auction</td>\n",
+              "      <td>Sotheby's London</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>1987</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1990</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>Mixed Media: 20th Century Art</td>\n",
+              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2000.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>2011</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>305 x 244mm</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>Prints &amp; Multiples</td>\n",
+              "      <td>Bonhams Knightsbridge</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Artist_Name                         Title  ... Currency         Country\n",
+              "0  Damien Hirst            SPOT DRAWING NO. 2  ...      GBP  United Kingdom\n",
+              "1  Damien Hirst     Supreme Skate Deck Red #7  ...      USD   United States\n",
+              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...      USD   United States\n",
+              "3  Damien Hirst                      Pharmacy  ...      GBP  United Kingdom\n",
+              "4  Damien Hirst   The Complete Spot Paintings  ...      GBP  United Kingdom\n",
+              "\n",
+              "[5 rows x 14 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 202
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4k8GQkK5huUT",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['Realized_Price'] = auction_history['Realized_Price'].str.replace(',','')\n",
+        "auction_history['Low Estimate'] = auction_history['Low Estimate'].str.replace(',','')\n",
+        "auction_history['High Estimate'] = auction_history['High Estimate'].str.replace(',','')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "kXzcEuTchukJ",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['Realized_Price'] = auction_history['Realized_Price'].fillna(0)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UdiVJayWlIsH",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 84
+        },
+        "outputId": "032b1132-30e6-47fc-c618-7a9fbd6b9d4e"
+      },
+      "source": [
+        "auction_history[['Realized_Price', 'Low Estimate', 'High Estimate']].isnull().sum()"
       ],
       "execution_count": 159,
       "outputs": [
@@ -847,25 +1538,10 @@
           "output_type": "execute_result",
           "data": {
             "text/plain": [
-              "GBP    2908\n",
-              "USD    1887\n",
-              "EUR    1238\n",
-              "HKD     121\n",
-              "KRW      75\n",
-              "CHF      67\n",
-              "JPY      55\n",
-              "AUD      48\n",
-              "SEK      40\n",
-              "CNY      28\n",
-              "TWD      14\n",
-              "NZD      13\n",
-              "DKK      12\n",
-              "NOK       7\n",
-              "MXN       7\n",
-              "ZAR       4\n",
-              "SGD       4\n",
-              "CZK       2\n",
-              "Name: Currency, dtype: int64"
+              "Realized_Price      0\n",
+              "Low Estimate        2\n",
+              "High Estimate     480\n",
+              "dtype: int64"
             ]
           },
           "metadata": {
@@ -874,6 +1550,477 @@
           "execution_count": 159
         }
       ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GWnJgo1ulXQ3",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 190
+        },
+        "outputId": "664fbe46-54b2-4f3f-b215-439fddf3a37b"
+      },
+      "source": [
+        "auction_history.loc[auction_history['Low Estimate'].isnull()]"
+      ],
+      "execution_count": 160,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>2466</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>In Search of Reality</td>\n",
+              "      <td>2007</td>\n",
+              "      <td>glass, stainless steel, steel, aluminium, nick...</td>\n",
+              "      <td>120.3 x 180.3 x 10.2 cm (47 3/8 x 70 7/8 x 4 in.)</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>no auction house listed</td>\n",
+              "      <td>NaT</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>None</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3305</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>In Search of Reality</td>\n",
+              "      <td>2007</td>\n",
+              "      <td>glass, stainless steel, steel, aluminium, nick...</td>\n",
+              "      <td>120.3 x 180.3 x 10.2 cm (47 3/8 x 70 7/8 x 4 in.)</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>0</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>no auction house listed</td>\n",
+              "      <td>NaT</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>None</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "       Artist_Name                 Title  ... Currency Country\n",
+              "2466  Damien Hirst  In Search of Reality  ...      NaN    None\n",
+              "3305  Damien Hirst  In Search of Reality  ...      NaN    None\n",
+              "\n",
+              "[2 rows x 14 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 160
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "c8vL6Bv7nq0A",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history = auction_history.drop(auction_history.index[2466])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "oVemSgenn6Xd",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history = auction_history.drop(auction_history.index[3304])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-YlChZtGoUGV",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 84
+        },
+        "outputId": "918dab9a-049c-4956-f007-a313d833e87b"
+      },
+      "source": [
+        "auction_history[['Realized_Price', 'Low Estimate', 'High Estimate']].isnull().sum()"
+      ],
+      "execution_count": 172,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Realized_Price    0\n",
+              "Low Estimate      0\n",
+              "High Estimate     0\n",
+              "dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 172
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "1yyNTdW5oZZn",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "temp = auction_history['Low Estimate'].loc[auction_history['High Estimate'].isnull()]\n",
+        "auction_history['High Estimate'] = auction_history['High Estimate'].fillna(temp)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zXbYNq_NvG2y",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['Realized_Price'] = auction_history['Realized_Price'].astype(float)\n",
+        "auction_history['High Estimate'] = auction_history['High Estimate'].astype(float)\n",
+        "auction_history['Low Estimate'] = auction_history['Low Estimate'].astype(float)"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_wpicLWZwVYO",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['High Estimate'] = auction_history['High Estimate'].str.replace('Not', '0')\n",
+        "auction_history['Low Estimate'] = auction_history['Low Estimate'].str.replace('Not', '0')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Z09nuQylxTsH",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['Date_Created'] = pd.to_datetime(auction_history['Date_Created'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "UuTsR8J2xZCt",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 269
+        },
+        "outputId": "53ebd679-b4de-49da-ea95-2bfcb852d01f"
+      },
+      "source": [
+        "auction_history.dtypes"
+      ],
+      "execution_count": 204,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Artist_Name               object\n",
+              "Title                     object\n",
+              "Date_Created      datetime64[ns]\n",
+              "Medium                    object\n",
+              "Size                      object\n",
+              "Signed_Edition            object\n",
+              "Realized_Price           float64\n",
+              "Sale                      object\n",
+              "Auction_House             object\n",
+              "Sale_Date         datetime64[ns]\n",
+              "Low Estimate             float64\n",
+              "High Estimate            float64\n",
+              "Currency                  object\n",
+              "Country                   object\n",
+              "dtype: object"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 204
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Iy8UDfH4xx28",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 481
+        },
+        "outputId": "c98b0e95-19e5-4d19-bb54-cc55e3424bd6"
+      },
+      "source": [
+        "auction_history.head()"
+      ],
+      "execution_count": 206,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Artist_Name</th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Date_Created</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Size</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale</th>\n",
+              "      <th>Auction_House</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Currency</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>1990-01-01</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>Contemporary Art Day Auction</td>\n",
+              "      <td>Sotheby's London</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>1987-01-01</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>1987-01-01</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>31.25 x 8 inches</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
+              "      <td>Santa Monica Auctions</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1990-01-01</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>Mixed Media: 20th Century Art</td>\n",
+              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2000.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Damien Hirst</td>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>2011-01-01</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>305 x 244mm</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>Prints &amp; Multiples</td>\n",
+              "      <td>Bonhams Knightsbridge</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>GBP</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    Artist_Name                         Title  ... Currency         Country\n",
+              "0  Damien Hirst            SPOT DRAWING NO. 2  ...      GBP  United Kingdom\n",
+              "1  Damien Hirst     Supreme Skate Deck Red #7  ...      USD   United States\n",
+              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...      USD   United States\n",
+              "3  Damien Hirst                      Pharmacy  ...      GBP  United Kingdom\n",
+              "4  Damien Hirst   The Complete Spot Paintings  ...      GBP  United Kingdom\n",
+              "\n",
+              "[5 rows x 14 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 206
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab_type": "code",
+        "id": "gZ349PEN15iE",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['performance'] = (auction_history['Realized_Price'] / auction_history['Low Estimate'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lf52Y5sa9Gwb",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "house = []\n",
+        "temp = auction_history['Auction_House']\n",
+        "\n",
+        "for i in range(len(temp)):\n",
+        "  try:\n",
+        "    if \"Sotheby's\" in temp[i]:\n",
+        "      house.append(\"Sotheby's\")\n",
+        "    elif \"Christie's\" in temp[i]:\n",
+        "      house.append(\"Christie's\")\n",
+        "    elif \"Phillips\" in temp[i]:\n",
+        "      house.append(\"Phillips\")\n",
+        "    else:\n",
+        "      house.append(\"Other\")\n",
+        "  except:\n",
+        "    pass\n",
+        "    \n",
+        "auction_history['houses'] = house"
+      ],
+      "execution_count": 0,
+      "outputs": []
     }
   ]
 }
