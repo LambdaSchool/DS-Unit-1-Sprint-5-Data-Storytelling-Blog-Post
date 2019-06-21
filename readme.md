@@ -1,3 +1,5 @@
+Post on Medium == https://medium.com/@valerielangat/are-landlords-in-the-business-of-bullying-c211f68f1661
+
 # DS Data Storytelling portfolio project
 
 Contents
