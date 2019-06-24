@@ -19,3 +19,7 @@ https://cfpb.github.io/api/ccdb//index.html
 * Payday loan, title loan, or personal loan  
 * Student loan  
 * Vehicle loan or lease  
+
+CFPB Summary of product and sub-product changes  
+Effective Date: April 24, 2017  
+https://files.consumerfinance.gov/f/documents/201704_cfpb_Summary_of_Product_and_Sub-product_Changes.pdf
