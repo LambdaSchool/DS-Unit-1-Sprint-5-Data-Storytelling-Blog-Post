@@ -73,17 +73,17 @@
       "metadata": {
         "id": "4xce9dCSeHAQ",
         "colab_type": "code",
-        "outputId": "49553107-349b-4017-f68d-21122091d749",
+        "outputId": "272e542f-e69c-4d30-8c37-706f5b5ae5f0",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 195
+          "height": 77
         }
       },
       "source": [
         "raisonne = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/DamienHist_artwork_list.csv')\n",
-        "raisonne.head()"
+        "raisonne.head(1)"
       ],
-      "execution_count": 101,
+      "execution_count": 456,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -125,42 +125,6 @@
               "      <td>Emergency Paintings</td>\n",
               "      <td>http://damienhirst.com/images/hirstimage/Emerg...</td>\n",
               "    </tr>\n",
-              "    <tr>\n",
-              "      <th>1</th>\n",
-              "      <td>Trauma</td>\n",
-              "      <td>2016</td>\n",
-              "      <td>305 x 305 mm | 12 x 12 in</td>\n",
-              "      <td>Flexible PVC vehicle vinyl and lacquer on canvas</td>\n",
-              "      <td>Emergency Paintings</td>\n",
-              "      <td>http://damienhirst.com/images/hirstimage/Traum...</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>2</th>\n",
-              "      <td>Police</td>\n",
-              "      <td>2014</td>\n",
-              "      <td>2438 x 2134 mm | 96 x 84 in</td>\n",
-              "      <td>Flexible crystal grade micro prismatic vinyl o...</td>\n",
-              "      <td>Emergency Paintings</td>\n",
-              "      <td>http://damienhirst.com/images/hirstimage/Polic...</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>3</th>\n",
-              "      <td>Up</td>\n",
-              "      <td>2015</td>\n",
-              "      <td>305 x 305 mm | 12 x 12 in</td>\n",
-              "      <td>Flexible crystal grade micro prismatic vinyl o...</td>\n",
-              "      <td>Emergency Paintings</td>\n",
-              "      <td>http://damienhirst.com/images/hirstimage/Up_1_...</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>4</th>\n",
-              "      <td>Injury</td>\n",
-              "      <td>2016</td>\n",
-              "      <td>130 x 565 mm | 5.1 x 22.2 in</td>\n",
-              "      <td>Flexible crystal grade micro prismatic vinyl a...</td>\n",
-              "      <td>Emergency Paintings</td>\n",
-              "      <td>http://damienhirst.com/images/hirstimage/Injur...</td>\n",
-              "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
               "</div>"
@@ -168,36 +132,32 @@
             "text/plain": [
               "       Title  ...                                      Link to Image\n",
               "0  Emergency  ...  http://damienhirst.com/images/hirstimage/Emerg...\n",
-              "1     Trauma  ...  http://damienhirst.com/images/hirstimage/Traum...\n",
-              "2     Police  ...  http://damienhirst.com/images/hirstimage/Polic...\n",
-              "3         Up  ...  http://damienhirst.com/images/hirstimage/Up_1_...\n",
-              "4     Injury  ...  http://damienhirst.com/images/hirstimage/Injur...\n",
               "\n",
-              "[5 rows x 6 columns]"
+              "[1 rows x 6 columns]"
             ]
           },
           "metadata": {
             "tags": []
           },
-          "execution_count": 101
+          "execution_count": 456
         }
       ]
     },
     {
       "cell_type": "code",
       "metadata": {
-        "id": "Jveol8hqSx2K",
+        "id": "xNXPZuOhn_Od",
         "colab_type": "code",
-        "outputId": "0175a171-a83d-44d4-f260-1e9bc97e2870",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
-        }
+        },
+        "outputId": "a9923a24-9ce6-49c1-de0a-9ba562c32c8c"
       },
       "source": [
         "raisonne.shape"
       ],
-      "execution_count": 3,
+      "execution_count": 457,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -209,7 +169,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 3
+          "execution_count": 457
         }
       ]
     },
@@ -218,18 +178,18 @@
       "metadata": {
         "id": "AaOpUg-SeSr3",
         "colab_type": "code",
-        "outputId": "d2917cce-b0b2-40a5-ceab-2ceba5f03551",
+        "outputId": "8016b926-0b0c-4844-dc5c-148caf0662a6",
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 397
+          "height": 94
         }
       },
       "source": [
         "auction_history = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/Damien_Hirst_Auction_Results.csv')\n",
         "auction_history.drop('ID_Batch_Loop#', axis=1, inplace=True)\n",
-        "auction_history.head()"
+        "auction_history.head(1)"
       ],
-      "execution_count": 140,
+      "execution_count": 458,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -281,99 +241,39 @@
               "      <td>Sotheby's London</td>\n",
               "      <td>Jun. 27, 2018</td>\n",
               "    </tr>\n",
-              "    <tr>\n",
-              "      <th>1</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Red #7, 1987</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>800 - 1,200 USD</td>\n",
-              "      <td>450 USD*</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>2</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Yellow #6, 1987</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original bag</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>800 - 1,200 USD</td>\n",
-              "      <td>475 USD*</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>3</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Pharmacy, circa1990</td>\n",
-              "      <td>circa1990</td>\n",
-              "      <td>offset lithograph printed in colours</td>\n",
-              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
-              "      <td>42/200</td>\n",
-              "      <td>1,500 - 2,000 GBP</td>\n",
-              "      <td>1,500 GBP</td>\n",
-              "      <td>Mixed Media: 20th Century Art</td>\n",
-              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
-              "      <td>Jul. 16, 2015</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>4</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>The Complete Spot Paintings, 1986-2011</td>\n",
-              "      <td>1986-2011</td>\n",
-              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
-              "      <td>305 x 244mm</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>1,000 - 1,500 GBP</td>\n",
-              "      <td>2,375 GBP</td>\n",
-              "      <td>Prints &amp; Multiples</td>\n",
-              "      <td>Bonhams Knightsbridge</td>\n",
-              "      <td>Jun. 03, 2015</td>\n",
-              "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
               "</div>"
             ],
             "text/plain": [
-              "    Artist_Name  ...      Sale_Date\n",
-              "0  Damien Hirst  ...  Jun. 27, 2018\n",
-              "1  Damien Hirst  ...  Jun. 04, 2017\n",
-              "2  Damien Hirst  ...  Jun. 04, 2017\n",
-              "3  Damien Hirst  ...  Jul. 16, 2015\n",
-              "4  Damien Hirst  ...  Jun. 03, 2015\n",
+              "    Artist_Name                     Title  ...     Auction_House      Sale_Date\n",
+              "0  Damien Hirst  SPOT DRAWING NO. 2, 1990  ...  Sotheby's London  Jun. 27, 2018\n",
               "\n",
-              "[5 rows x 11 columns]"
+              "[1 rows x 11 columns]"
             ]
           },
           "metadata": {
             "tags": []
           },
-          "execution_count": 140
+          "execution_count": 458
         }
       ]
     },
     {
       "cell_type": "code",
       "metadata": {
-        "id": "PsmWpi2JS5vB",
+        "id": "lpK3_twXoB87",
         "colab_type": "code",
-        "outputId": "41b8c1f1-0d1f-46be-b932-26a81499662a",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 34
-        }
+        },
+        "outputId": "7901f393-9a9f-49da-c210-78c3adebfc96"
       },
       "source": [
         "auction_history.shape"
       ],
-      "execution_count": 5,
+      "execution_count": 459,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -385,7 +285,186 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 5
+          "execution_count": 459
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "d_EkPBo9Kqq7",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 77
+        },
+        "outputId": "47f6ad22-7348-4b7e-ee1e-ea3574ca4c0a"
+      },
+      "source": [
+        "fx_rates = pd.read_csv(\"https://pkgstore.datahub.io/core/exchange-rates/daily_csv/data/03e15e28c7eea87026fee299a8859e97/daily_csv.csv\")\n",
+        "fx_rates['Date'] = pd.to_datetime(fx_rates['Date'])\n",
+        "fx_rates.head(1)"
+      ],
+      "execution_count": 460,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1971-01-04</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8987</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "        Date    Country   Value\n",
+              "0 1971-01-04  Australia  0.8987"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 460
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZCBr__KrVKWP",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 134
+        },
+        "outputId": "df37471b-eae4-4676-cec5-2ffb09ba3a4d"
+      },
+      "source": [
+        "raisonne.isnull().sum()"
+      ],
+      "execution_count": 461,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Title                   0\n",
+              "Year                    0\n",
+              "Size                    4\n",
+              "Materials and Medium    2\n",
+              "Series                  0\n",
+              "Link to Image           0\n",
+              "dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 461
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZVBqVPKvVPT1",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 218
+        },
+        "outputId": "8606298f-4106-4359-c787-bbe3d1a6541b"
+      },
+      "source": [
+        "auction_history.isnull().sum()"
+      ],
+      "execution_count": 462,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Artist_Name          0\n",
+              "Title                0\n",
+              "Date_Created         0\n",
+              "Medium               0\n",
+              "Size               215\n",
+              "Signed_Edition    1123\n",
+              "Estimate_Range       0\n",
+              "Realized_Price       0\n",
+              "Sale                51\n",
+              "Auction_House        0\n",
+              "Sale_Date            0\n",
+              "dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 462
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "D7cJk_EAVVc2",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 84
+        },
+        "outputId": "4311e420-f49f-495b-cb15-1f51b3eb5a48"
+      },
+      "source": [
+        "fx_rates.fillna(method='ffill', inplace=True)\n",
+        "fx_rates.isnull().sum()"
+      ],
+      "execution_count": 463,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "Date       0\n",
+              "Country    0\n",
+              "Value      0\n",
+              "dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 463
         }
       ]
     },
@@ -480,28 +559,6 @@
         "    dates[i] = year\n",
         "    \n",
         "  return dates"
-      ],
-      "execution_count": 0,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
-        "id": "FeNwvs-o7TDG",
-        "colab_type": "code",
-        "colab": {}
-      },
-      "source": [
-        "def clean_size(size):\n",
-        "  \"\"\"\n",
-        "  take the size column, pull out height, width, depth, and diameter measurements. \n",
-        "  Drop the existing size column and replace it with the new columns for height, \n",
-        "  width, and depth\n",
-        "  :param: size = list\n",
-        "  return: lists = heigth, width, depth, and diameter as new columns in the \n",
-        "  auction_history dataframe\n",
-        "  \"\"\"\n",
-        "  return"
       ],
       "execution_count": 0,
       "outputs": []
@@ -668,7 +725,7 @@
       "metadata": {
         "id": "k-zJyExW0sKt",
         "colab_type": "code",
-        "outputId": "f6fb7376-ab7e-4258-fc8b-cc85c73b410c",
+        "outputId": "ad6fd8d3-e345-4376-c866-28be9ae3735d",
         "colab": {
           "base_uri": "https://localhost:8080/",
           "height": 430
@@ -677,7 +734,7 @@
       "source": [
         "auction_history.head()"
       ],
-      "execution_count": 145,
+      "execution_count": 472,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -815,7 +872,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 145
+          "execution_count": 472
         }
       ]
     },
@@ -842,191 +899,15 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "yCk5FAT5EEEO",
+        "id": "9l9fBCgwWgyW",
         "colab_type": "code",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 430
-        },
-        "outputId": "25196b4c-0e90-4cc7-e836-1479a8e14b67"
+        "colab": {}
       },
       "source": [
-        "auction_history.head()"
+        "auction_history['Currency'].fillna('USD', inplace=True)"
       ],
-      "execution_count": 147,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/html": [
-              "<div>\n",
-              "<style scoped>\n",
-              "    .dataframe tbody tr th:only-of-type {\n",
-              "        vertical-align: middle;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe tbody tr th {\n",
-              "        vertical-align: top;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe thead th {\n",
-              "        text-align: right;\n",
-              "    }\n",
-              "</style>\n",
-              "<table border=\"1\" class=\"dataframe\">\n",
-              "  <thead>\n",
-              "    <tr style=\"text-align: right;\">\n",
-              "      <th></th>\n",
-              "      <th>Artist_Name</th>\n",
-              "      <th>Title</th>\n",
-              "      <th>Date_Created</th>\n",
-              "      <th>Medium</th>\n",
-              "      <th>Size</th>\n",
-              "      <th>Signed_Edition</th>\n",
-              "      <th>Realized_Price</th>\n",
-              "      <th>Sale</th>\n",
-              "      <th>Auction_House</th>\n",
-              "      <th>Sale_Date</th>\n",
-              "      <th>Low Estimate</th>\n",
-              "      <th>High Estimate</th>\n",
-              "      <th>Currency</th>\n",
-              "    </tr>\n",
-              "  </thead>\n",
-              "  <tbody>\n",
-              "    <tr>\n",
-              "      <th>0</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>SPOT DRAWING NO. 2</td>\n",
-              "      <td>1990</td>\n",
-              "      <td>coloured pencil on paper</td>\n",
-              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>175,000</td>\n",
-              "      <td>Contemporary Art Day Auction</td>\n",
-              "      <td>Sotheby's London</td>\n",
-              "      <td>Jun. 27, 2018</td>\n",
-              "      <td>80,000</td>\n",
-              "      <td>120,000</td>\n",
-              "      <td>GBP</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>1</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Red #7</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>450</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "      <td>800</td>\n",
-              "      <td>1,200</td>\n",
-              "      <td>USD</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>2</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Yellow #6</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original bag</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>475</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "      <td>800</td>\n",
-              "      <td>1,200</td>\n",
-              "      <td>USD</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>3</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Pharmacy</td>\n",
-              "      <td>1990</td>\n",
-              "      <td>offset lithograph printed in colours</td>\n",
-              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
-              "      <td>42/200</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>Mixed Media: 20th Century Art</td>\n",
-              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
-              "      <td>Jul. 16, 2015</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>2,000</td>\n",
-              "      <td>GBP</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>4</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>The Complete Spot Paintings</td>\n",
-              "      <td>2011</td>\n",
-              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
-              "      <td>305 x 244mm</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>2,375</td>\n",
-              "      <td>Prints &amp; Multiples</td>\n",
-              "      <td>Bonhams Knightsbridge</td>\n",
-              "      <td>Jun. 03, 2015</td>\n",
-              "      <td>1,000</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>GBP</td>\n",
-              "    </tr>\n",
-              "  </tbody>\n",
-              "</table>\n",
-              "</div>"
-            ],
-            "text/plain": [
-              "    Artist_Name                         Title  ... High Estimate Currency\n",
-              "0  Damien Hirst            SPOT DRAWING NO. 2  ...       120,000      GBP\n",
-              "1  Damien Hirst     Supreme Skate Deck Red #7  ...         1,200      USD\n",
-              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...         1,200      USD\n",
-              "3  Damien Hirst                      Pharmacy  ...         2,000      GBP\n",
-              "4  Damien Hirst   The Complete Spot Paintings  ...         1,500      GBP\n",
-              "\n",
-              "[5 rows x 13 columns]"
-            ]
-          },
-          "metadata": {
-            "tags": []
-          },
-          "execution_count": 147
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
-        "id": "phF9mqUKEr4O",
-        "colab_type": "code",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 67
-        },
-        "outputId": "5dc8f879-d88e-4fb9-8113-b95346352adf"
-      },
-      "source": [
-        "currency_list = auction_history['Currency'].unique()\n",
-        "currency_list"
-      ],
-      "execution_count": 148,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "array(['GBP', 'USD', 'EUR', 'HKD', 'CNY', 'CHF', 'SEK', 'JPY', nan, 'KRW',\n",
-              "       'AUD', 'NOK', 'ZAR', 'DKK', 'NZD', 'TWD', 'SGD', 'MXN', 'CZK'],\n",
-              "      dtype=object)"
-            ]
-          },
-          "metadata": {
-            "tags": []
-          },
-          "execution_count": 148
-        }
-      ]
+      "execution_count": 0,
+      "outputs": []
     },
     {
       "cell_type": "code",
@@ -1037,7 +918,8 @@
       },
       "source": [
         "country_dict = {'GBP': 'United Kingdom', 'USD': 'United States', 'EUR': 'Europe', 'HKD': 'Hong Kong', 'CNY': 'China', 'CHF': 'Switzerland',\n",
-        "             'SEK': 'Sweden', 'JPY': 'Japan', 'KRW': 'South Korea'}"
+        "             'SEK': 'Sweden', 'JPY': 'Japan', 'KRW': 'South Korea', 'AUD': 'Australia', 'NOK': 'Norway', 'ZAR': 'South Africa', 'DKK': 'Denmark', 'NZD': 'New Zealand', \n",
+        "               'TWD': 'Taiwan', 'SGD': 'Singapore', 'MXN': 'Mexico', 'CZK': 'Czech Republic'}"
       ],
       "execution_count": 0,
       "outputs": []
@@ -1057,174 +939,12 @@
         "  try:\n",
         "    country.append(country_dict.get(currency[i]))\n",
         "  except:\n",
-        "    country.append(np.nan)\n",
+        "    pass\n",
         "    \n",
         "auction_history['Country'] = country"
       ],
       "execution_count": 0,
       "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
-        "id": "mhqQQN8gJMwf",
-        "colab_type": "code",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 481
-        },
-        "outputId": "6880fd45-3c8f-4333-f350-e63d0d73adc3"
-      },
-      "source": [
-        "auction_history.head()"
-      ],
-      "execution_count": 151,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/html": [
-              "<div>\n",
-              "<style scoped>\n",
-              "    .dataframe tbody tr th:only-of-type {\n",
-              "        vertical-align: middle;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe tbody tr th {\n",
-              "        vertical-align: top;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe thead th {\n",
-              "        text-align: right;\n",
-              "    }\n",
-              "</style>\n",
-              "<table border=\"1\" class=\"dataframe\">\n",
-              "  <thead>\n",
-              "    <tr style=\"text-align: right;\">\n",
-              "      <th></th>\n",
-              "      <th>Artist_Name</th>\n",
-              "      <th>Title</th>\n",
-              "      <th>Date_Created</th>\n",
-              "      <th>Medium</th>\n",
-              "      <th>Size</th>\n",
-              "      <th>Signed_Edition</th>\n",
-              "      <th>Realized_Price</th>\n",
-              "      <th>Sale</th>\n",
-              "      <th>Auction_House</th>\n",
-              "      <th>Sale_Date</th>\n",
-              "      <th>Low Estimate</th>\n",
-              "      <th>High Estimate</th>\n",
-              "      <th>Currency</th>\n",
-              "      <th>Country</th>\n",
-              "    </tr>\n",
-              "  </thead>\n",
-              "  <tbody>\n",
-              "    <tr>\n",
-              "      <th>0</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>SPOT DRAWING NO. 2</td>\n",
-              "      <td>1990</td>\n",
-              "      <td>coloured pencil on paper</td>\n",
-              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>175,000</td>\n",
-              "      <td>Contemporary Art Day Auction</td>\n",
-              "      <td>Sotheby's London</td>\n",
-              "      <td>Jun. 27, 2018</td>\n",
-              "      <td>80,000</td>\n",
-              "      <td>120,000</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>1</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Red #7</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>450</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "      <td>800</td>\n",
-              "      <td>1,200</td>\n",
-              "      <td>USD</td>\n",
-              "      <td>United States</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>2</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Yellow #6</td>\n",
-              "      <td>1987</td>\n",
-              "      <td>Color silkscreen on plywood in original bag</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>475</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>Jun. 04, 2017</td>\n",
-              "      <td>800</td>\n",
-              "      <td>1,200</td>\n",
-              "      <td>USD</td>\n",
-              "      <td>United States</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>3</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Pharmacy</td>\n",
-              "      <td>1990</td>\n",
-              "      <td>offset lithograph printed in colours</td>\n",
-              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
-              "      <td>42/200</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>Mixed Media: 20th Century Art</td>\n",
-              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
-              "      <td>Jul. 16, 2015</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>2,000</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>4</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>The Complete Spot Paintings</td>\n",
-              "      <td>2011</td>\n",
-              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
-              "      <td>305 x 244mm</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>2,375</td>\n",
-              "      <td>Prints &amp; Multiples</td>\n",
-              "      <td>Bonhams Knightsbridge</td>\n",
-              "      <td>Jun. 03, 2015</td>\n",
-              "      <td>1,000</td>\n",
-              "      <td>1,500</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "  </tbody>\n",
-              "</table>\n",
-              "</div>"
-            ],
-            "text/plain": [
-              "    Artist_Name                         Title  ... Currency         Country\n",
-              "0  Damien Hirst            SPOT DRAWING NO. 2  ...      GBP  United Kingdom\n",
-              "1  Damien Hirst     Supreme Skate Deck Red #7  ...      USD   United States\n",
-              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...      USD   United States\n",
-              "3  Damien Hirst                      Pharmacy  ...      GBP  United Kingdom\n",
-              "4  Damien Hirst   The Complete Spot Paintings  ...      GBP  United Kingdom\n",
-              "\n",
-              "[5 rows x 14 columns]"
-            ]
-          },
-          "metadata": {
-            "tags": []
-          },
-          "execution_count": 151
-        }
-      ]
     },
     {
       "cell_type": "code",
@@ -1261,50 +981,6 @@
     {
       "cell_type": "code",
       "metadata": {
-        "id": "saDvwNvsSN8f",
-        "colab_type": "code",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 269
-        },
-        "outputId": "30e68852-5714-4749-b4a1-c25d48339550"
-      },
-      "source": [
-        "auction_history.dtypes"
-      ],
-      "execution_count": 154,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/plain": [
-              "Artist_Name               object\n",
-              "Title                     object\n",
-              "Date_Created              object\n",
-              "Medium                    object\n",
-              "Size                      object\n",
-              "Signed_Edition            object\n",
-              "Realized_Price            object\n",
-              "Sale                      object\n",
-              "Auction_House             object\n",
-              "Sale_Date         datetime64[ns]\n",
-              "Low Estimate              object\n",
-              "High Estimate             object\n",
-              "Currency                  object\n",
-              "Country                   object\n",
-              "dtype: object"
-            ]
-          },
-          "metadata": {
-            "tags": []
-          },
-          "execution_count": 154
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
         "id": "nieXDPAOfRsW",
         "colab_type": "code",
         "colab": {}
@@ -1337,12 +1013,12 @@
           "base_uri": "https://localhost:8080/",
           "height": 481
         },
-        "outputId": "977f12c8-0954-4837-bc46-b5569a48977f"
+        "outputId": "22bc14cf-42e1-4c8b-c92a-a931da05bdd5"
       },
       "source": [
         "auction_history.head()"
       ],
-      "execution_count": 202,
+      "execution_count": 480,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1391,12 +1067,12 @@
               "      <td>coloured pencil on paper</td>\n",
               "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
               "      <td>Signed</td>\n",
-              "      <td>175000.0</td>\n",
+              "      <td>175,000</td>\n",
               "      <td>Contemporary Art Day Auction</td>\n",
               "      <td>Sotheby's London</td>\n",
               "      <td>2018-06-27</td>\n",
-              "      <td>80000.0</td>\n",
-              "      <td>120000.0</td>\n",
+              "      <td>80,000</td>\n",
+              "      <td>120,000</td>\n",
               "      <td>GBP</td>\n",
               "      <td>United Kingdom</td>\n",
               "    </tr>\n",
@@ -1408,12 +1084,12 @@
               "      <td>Color silkscreen on plywood in original</td>\n",
               "      <td>31.25 x 8 inches</td>\n",
               "      <td>from an edition of 500</td>\n",
-              "      <td>450.0</td>\n",
+              "      <td>450</td>\n",
               "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
               "      <td>Santa Monica Auctions</td>\n",
               "      <td>2017-06-04</td>\n",
-              "      <td>800.0</td>\n",
-              "      <td>1200.0</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
               "      <td>USD</td>\n",
               "      <td>United States</td>\n",
               "    </tr>\n",
@@ -1425,12 +1101,12 @@
               "      <td>Color silkscreen on plywood in original bag</td>\n",
               "      <td>31.25 x 8 inches</td>\n",
               "      <td>from an edition of 500</td>\n",
-              "      <td>475.0</td>\n",
+              "      <td>475</td>\n",
               "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
               "      <td>Santa Monica Auctions</td>\n",
               "      <td>2017-06-04</td>\n",
-              "      <td>800.0</td>\n",
-              "      <td>1200.0</td>\n",
+              "      <td>800</td>\n",
+              "      <td>1,200</td>\n",
               "      <td>USD</td>\n",
               "      <td>United States</td>\n",
               "    </tr>\n",
@@ -1442,12 +1118,12 @@
               "      <td>offset lithograph printed in colours</td>\n",
               "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
               "      <td>42/200</td>\n",
-              "      <td>1500.0</td>\n",
+              "      <td>1,500</td>\n",
               "      <td>Mixed Media: 20th Century Art</td>\n",
               "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
               "      <td>2015-07-16</td>\n",
-              "      <td>1500.0</td>\n",
-              "      <td>2000.0</td>\n",
+              "      <td>1,500</td>\n",
+              "      <td>2,000</td>\n",
               "      <td>GBP</td>\n",
               "      <td>United Kingdom</td>\n",
               "    </tr>\n",
@@ -1459,12 +1135,12 @@
               "      <td>with butterfly and heart drawing on the slipca...</td>\n",
               "      <td>305 x 244mm</td>\n",
               "      <td>Signed</td>\n",
-              "      <td>2375.0</td>\n",
+              "      <td>2,375</td>\n",
               "      <td>Prints &amp; Multiples</td>\n",
               "      <td>Bonhams Knightsbridge</td>\n",
               "      <td>2015-06-03</td>\n",
-              "      <td>1000.0</td>\n",
-              "      <td>1500.0</td>\n",
+              "      <td>1,000</td>\n",
+              "      <td>1,500</td>\n",
               "      <td>GBP</td>\n",
               "      <td>United Kingdom</td>\n",
               "    </tr>\n",
@@ -1486,7 +1162,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 202
+          "execution_count": 480
         }
       ]
     },
@@ -1527,12 +1203,12 @@
           "base_uri": "https://localhost:8080/",
           "height": 84
         },
-        "outputId": "032b1132-30e6-47fc-c618-7a9fbd6b9d4e"
+        "outputId": "c468778b-52bb-4c28-b1aa-366218f1ce20"
       },
       "source": [
         "auction_history[['Realized_Price', 'Low Estimate', 'High Estimate']].isnull().sum()"
       ],
-      "execution_count": 159,
+      "execution_count": 483,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1547,7 +1223,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 159
+          "execution_count": 483
         }
       ]
     },
@@ -1560,12 +1236,12 @@
           "base_uri": "https://localhost:8080/",
           "height": 190
         },
-        "outputId": "664fbe46-54b2-4f3f-b215-439fddf3a37b"
+        "outputId": "461ffb1c-35b6-4b33-9fa4-3e378fe2ff11"
       },
       "source": [
         "auction_history.loc[auction_history['Low Estimate'].isnull()]"
       ],
-      "execution_count": 160,
+      "execution_count": 484,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1620,8 +1296,8 @@
               "      <td>NaT</td>\n",
               "      <td>NaN</td>\n",
               "      <td>NaN</td>\n",
-              "      <td>NaN</td>\n",
-              "      <td>None</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
               "    </tr>\n",
               "    <tr>\n",
               "      <th>3305</th>\n",
@@ -1637,17 +1313,17 @@
               "      <td>NaT</td>\n",
               "      <td>NaN</td>\n",
               "      <td>NaN</td>\n",
-              "      <td>NaN</td>\n",
-              "      <td>None</td>\n",
+              "      <td>USD</td>\n",
+              "      <td>United States</td>\n",
               "    </tr>\n",
               "  </tbody>\n",
               "</table>\n",
               "</div>"
             ],
             "text/plain": [
-              "       Artist_Name                 Title  ... Currency Country\n",
-              "2466  Damien Hirst  In Search of Reality  ...      NaN    None\n",
-              "3305  Damien Hirst  In Search of Reality  ...      NaN    None\n",
+              "       Artist_Name                 Title  ... Currency        Country\n",
+              "2466  Damien Hirst  In Search of Reality  ...      USD  United States\n",
+              "3305  Damien Hirst  In Search of Reality  ...      USD  United States\n",
               "\n",
               "[2 rows x 14 columns]"
             ]
@@ -1655,7 +1331,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 160
+          "execution_count": 484
         }
       ]
     },
@@ -1694,27 +1370,27 @@
           "base_uri": "https://localhost:8080/",
           "height": 84
         },
-        "outputId": "918dab9a-049c-4956-f007-a313d833e87b"
+        "outputId": "1153e8f0-e912-4585-bcdb-5c8442385c44"
       },
       "source": [
         "auction_history[['Realized_Price', 'Low Estimate', 'High Estimate']].isnull().sum()"
       ],
-      "execution_count": 172,
+      "execution_count": 487,
       "outputs": [
         {
           "output_type": "execute_result",
           "data": {
             "text/plain": [
-              "Realized_Price    0\n",
-              "Low Estimate      0\n",
-              "High Estimate     0\n",
+              "Realized_Price      0\n",
+              "Low Estimate        0\n",
+              "High Estimate     478\n",
               "dtype: int64"
             ]
           },
           "metadata": {
             "tags": []
           },
-          "execution_count": 172
+          "execution_count": 487
         }
       ]
     },
@@ -1735,6 +1411,20 @@
     {
       "cell_type": "code",
       "metadata": {
+        "id": "ZDE5PuUMYUHM",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history['High Estimate'] = auction_history['High Estimate'].str.replace('Not', '0')\n",
+        "auction_history['Low Estimate'] = auction_history['Low Estimate'].str.replace('Not', '0')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
         "id": "zXbYNq_NvG2y",
         "colab_type": "code",
         "colab": {}
@@ -1743,20 +1433,6 @@
         "auction_history['Realized_Price'] = auction_history['Realized_Price'].astype(float)\n",
         "auction_history['High Estimate'] = auction_history['High Estimate'].astype(float)\n",
         "auction_history['Low Estimate'] = auction_history['Low Estimate'].astype(float)"
-      ],
-      "execution_count": 0,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
-        "id": "_wpicLWZwVYO",
-        "colab_type": "code",
-        "colab": {}
-      },
-      "source": [
-        "auction_history['High Estimate'] = auction_history['High Estimate'].str.replace('Not', '0')\n",
-        "auction_history['Low Estimate'] = auction_history['Low Estimate'].str.replace('Not', '0')"
       ],
       "execution_count": 0,
       "outputs": []
@@ -1783,12 +1459,12 @@
           "base_uri": "https://localhost:8080/",
           "height": 269
         },
-        "outputId": "53ebd679-b4de-49da-ea95-2bfcb852d01f"
+        "outputId": "97605ada-ed67-4309-cf81-c75ce4c558fd"
       },
       "source": [
         "auction_history.dtypes"
       ],
-      "execution_count": 204,
+      "execution_count": 492,
       "outputs": [
         {
           "output_type": "execute_result",
@@ -1814,169 +1490,7 @@
           "metadata": {
             "tags": []
           },
-          "execution_count": 204
-        }
-      ]
-    },
-    {
-      "cell_type": "code",
-      "metadata": {
-        "id": "Iy8UDfH4xx28",
-        "colab_type": "code",
-        "colab": {
-          "base_uri": "https://localhost:8080/",
-          "height": 481
-        },
-        "outputId": "c98b0e95-19e5-4d19-bb54-cc55e3424bd6"
-      },
-      "source": [
-        "auction_history.head()"
-      ],
-      "execution_count": 206,
-      "outputs": [
-        {
-          "output_type": "execute_result",
-          "data": {
-            "text/html": [
-              "<div>\n",
-              "<style scoped>\n",
-              "    .dataframe tbody tr th:only-of-type {\n",
-              "        vertical-align: middle;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe tbody tr th {\n",
-              "        vertical-align: top;\n",
-              "    }\n",
-              "\n",
-              "    .dataframe thead th {\n",
-              "        text-align: right;\n",
-              "    }\n",
-              "</style>\n",
-              "<table border=\"1\" class=\"dataframe\">\n",
-              "  <thead>\n",
-              "    <tr style=\"text-align: right;\">\n",
-              "      <th></th>\n",
-              "      <th>Artist_Name</th>\n",
-              "      <th>Title</th>\n",
-              "      <th>Date_Created</th>\n",
-              "      <th>Medium</th>\n",
-              "      <th>Size</th>\n",
-              "      <th>Signed_Edition</th>\n",
-              "      <th>Realized_Price</th>\n",
-              "      <th>Sale</th>\n",
-              "      <th>Auction_House</th>\n",
-              "      <th>Sale_Date</th>\n",
-              "      <th>Low Estimate</th>\n",
-              "      <th>High Estimate</th>\n",
-              "      <th>Currency</th>\n",
-              "      <th>Country</th>\n",
-              "    </tr>\n",
-              "  </thead>\n",
-              "  <tbody>\n",
-              "    <tr>\n",
-              "      <th>0</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>SPOT DRAWING NO. 2</td>\n",
-              "      <td>1990-01-01</td>\n",
-              "      <td>coloured pencil on paper</td>\n",
-              "      <td>84.1 by 59.7 cm. 33 1/8 by 23 1/2 in</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>175000.0</td>\n",
-              "      <td>Contemporary Art Day Auction</td>\n",
-              "      <td>Sotheby's London</td>\n",
-              "      <td>2018-06-27</td>\n",
-              "      <td>80000.0</td>\n",
-              "      <td>120000.0</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>1</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Red #7</td>\n",
-              "      <td>1987-01-01</td>\n",
-              "      <td>Color silkscreen on plywood in original</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>450.0</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>2017-06-04</td>\n",
-              "      <td>800.0</td>\n",
-              "      <td>1200.0</td>\n",
-              "      <td>USD</td>\n",
-              "      <td>United States</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>2</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Supreme Skate Deck Yellow #6</td>\n",
-              "      <td>1987-01-01</td>\n",
-              "      <td>Color silkscreen on plywood in original bag</td>\n",
-              "      <td>31.25 x 8 inches</td>\n",
-              "      <td>from an edition of 500</td>\n",
-              "      <td>475.0</td>\n",
-              "      <td>Public Art Auction: Modern &amp; Contemporary Art,...</td>\n",
-              "      <td>Santa Monica Auctions</td>\n",
-              "      <td>2017-06-04</td>\n",
-              "      <td>800.0</td>\n",
-              "      <td>1200.0</td>\n",
-              "      <td>USD</td>\n",
-              "      <td>United States</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>3</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>Pharmacy</td>\n",
-              "      <td>1990-01-01</td>\n",
-              "      <td>offset lithograph printed in colours</td>\n",
-              "      <td>216 x 216 mm (8 1/2 x 8 1/2 in)</td>\n",
-              "      <td>42/200</td>\n",
-              "      <td>1500.0</td>\n",
-              "      <td>Mixed Media: 20th Century Art</td>\n",
-              "      <td>Dreweatts &amp; Bloomsbury Auctions, Bloomsbury House</td>\n",
-              "      <td>2015-07-16</td>\n",
-              "      <td>1500.0</td>\n",
-              "      <td>2000.0</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "    <tr>\n",
-              "      <th>4</th>\n",
-              "      <td>Damien Hirst</td>\n",
-              "      <td>The Complete Spot Paintings</td>\n",
-              "      <td>2011-01-01</td>\n",
-              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
-              "      <td>305 x 244mm</td>\n",
-              "      <td>Signed</td>\n",
-              "      <td>2375.0</td>\n",
-              "      <td>Prints &amp; Multiples</td>\n",
-              "      <td>Bonhams Knightsbridge</td>\n",
-              "      <td>2015-06-03</td>\n",
-              "      <td>1000.0</td>\n",
-              "      <td>1500.0</td>\n",
-              "      <td>GBP</td>\n",
-              "      <td>United Kingdom</td>\n",
-              "    </tr>\n",
-              "  </tbody>\n",
-              "</table>\n",
-              "</div>"
-            ],
-            "text/plain": [
-              "    Artist_Name                         Title  ... Currency         Country\n",
-              "0  Damien Hirst            SPOT DRAWING NO. 2  ...      GBP  United Kingdom\n",
-              "1  Damien Hirst     Supreme Skate Deck Red #7  ...      USD   United States\n",
-              "2  Damien Hirst  Supreme Skate Deck Yellow #6  ...      USD   United States\n",
-              "3  Damien Hirst                      Pharmacy  ...      GBP  United Kingdom\n",
-              "4  Damien Hirst   The Complete Spot Paintings  ...      GBP  United Kingdom\n",
-              "\n",
-              "[5 rows x 14 columns]"
-            ]
-          },
-          "metadata": {
-            "tags": []
-          },
-          "execution_count": 206
+          "execution_count": 492
         }
       ]
     },
@@ -2015,12 +1529,1725 @@
         "    else:\n",
         "      house.append(\"Other\")\n",
         "  except:\n",
-        "    pass\n",
+        "    house.append(\"Other\")\n",
         "    \n",
-        "auction_history['houses'] = house"
+        "auction_history['House'] = house"
       ],
       "execution_count": 0,
       "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Upzzs9NLY7J9",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "auction_history = auction_history.dropna(subset=['Sale_Date'])"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3djWB5unojtx",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "37c36587-92a8-4996-dd97-e78c0b56eb9c"
+      },
+      "source": [
+        "auction_history.shape"
+      ],
+      "execution_count": 496,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 16)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 496
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_xlJtShvNNm9",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "b90173e9-9c28-49d1-d4d8-e54cc6efefda"
+      },
+      "source": [
+        "sales = auction_history[['Title','Low Estimate', 'Realized_Price', 'Sale_Date', 'Country']]\n",
+        "sales = sales.rename(columns={'Sale_Date': 'Date'})\n",
+        "sales.head()"
+      ],
+      "execution_count": 497,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  Low Estimate  ...       Date         Country\n",
+              "0            SPOT DRAWING NO. 2       80000.0  ... 2018-06-27  United Kingdom\n",
+              "1     Supreme Skate Deck Red #7         800.0  ... 2017-06-04   United States\n",
+              "2  Supreme Skate Deck Yellow #6         800.0  ... 2017-06-04   United States\n",
+              "3                      Pharmacy        1500.0  ... 2015-07-16  United Kingdom\n",
+              "4   The Complete Spot Paintings        1000.0  ... 2015-06-03  United Kingdom\n",
+              "\n",
+              "[5 rows x 5 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 497
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GmleKqoLos5-",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "f25ebd29-c887-458d-f618-863c8ed56421"
+      },
+      "source": [
+        "sales.shape"
+      ],
+      "execution_count": 498,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 5)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 498
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "l71eX2v9heXR",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "8da6c28b-469b-43e6-c293-76a756820313"
+      },
+      "source": [
+        "fx_rates.head()"
+      ],
+      "execution_count": 499,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1971-01-04</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8987</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1971-01-05</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8983</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1971-01-06</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8977</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>1971-01-07</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8978</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>1971-01-08</td>\n",
+              "      <td>Australia</td>\n",
+              "      <td>0.8990</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "        Date    Country   Value\n",
+              "0 1971-01-04  Australia  0.8987\n",
+              "1 1971-01-05  Australia  0.8983\n",
+              "2 1971-01-06  Australia  0.8977\n",
+              "3 1971-01-07  Australia  0.8978\n",
+              "4 1971-01-08  Australia  0.8990"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 499
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yOAKncluY5ds",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "b739319b-b79c-4535-8d15-068a982cb718"
+      },
+      "source": [
+        "results = pd.merge(sales,\n",
+        "                   fx_rates,\n",
+        "                   on=['Country', 'Date'],\n",
+        "                   how='left')\n",
+        "results.head(5)"
+      ],
+      "execution_count": 500,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6410</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6514</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  Low Estimate  ...         Country   Value\n",
+              "0            SPOT DRAWING NO. 2       80000.0  ...  United Kingdom     NaN\n",
+              "1     Supreme Skate Deck Red #7         800.0  ...   United States     NaN\n",
+              "2  Supreme Skate Deck Yellow #6         800.0  ...   United States     NaN\n",
+              "3                      Pharmacy        1500.0  ...  United Kingdom  0.6410\n",
+              "4   The Complete Spot Paintings        1000.0  ...  United Kingdom  0.6514\n",
+              "\n",
+              "[5 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 500
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pMik-le8oxHw",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "347fb95f-8674-4111-9d51-3d4215654f4e"
+      },
+      "source": [
+        "results.shape"
+      ],
+      "execution_count": 501,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 6)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 501
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "j8WXOTfXo3ft",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 279
+        },
+        "outputId": "04107bb7-03c4-48ca-a071-12f502261d4f"
+      },
+      "source": [
+        "US = results[results['Country'] == 'United States']\n",
+        "US['Value'].fillna(1, inplace=True)\n",
+        "US.head()"
+      ],
+      "execution_count": 502,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "/usr/local/lib/python3.6/dist-packages/pandas/core/generic.py:6130: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame\n",
+            "\n",
+            "See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy\n",
+            "  self._update_inplace(new_data)\n"
+          ],
+          "name": "stderr"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>EXPANDED FROM SMALL RED WHEEL</td>\n",
+              "      <td>8000.0</td>\n",
+              "      <td>28125.0</td>\n",
+              "      <td>2013-05-15</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>11</th>\n",
+              "      <td>ELSA SCHIAPERELLI</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2008-04-30</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>13</th>\n",
+              "      <td>With Dead Head</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>1250.0</td>\n",
+              "      <td>2007-12-01</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>1.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                            Title  Low Estimate  ...        Country Value\n",
+              "1       Supreme Skate Deck Red #7         800.0  ...  United States   1.0\n",
+              "2    Supreme Skate Deck Yellow #6         800.0  ...  United States   1.0\n",
+              "8   EXPANDED FROM SMALL RED WHEEL        8000.0  ...  United States   1.0\n",
+              "11              ELSA SCHIAPERELLI        1500.0  ...  United States   1.0\n",
+              "13                 With Dead Head        1000.0  ...  United States   1.0\n",
+              "\n",
+              "[5 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 502
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VGcSh0IxvfRx",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "93e6f1f2-93a5-492c-e3d2-9dc4db872869"
+      },
+      "source": [
+        "not_us = results[results['Country'] != 'United States']\n",
+        "results = pd.concat([not_us, US])\n",
+        "results.shape"
+      ],
+      "execution_count": 503,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 6)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 503
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7kQuLQ3Ww87l",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 118
+        },
+        "outputId": "b694a090-345c-4436-8c34-8675b91da8d8"
+      },
+      "source": [
+        "not_sold = results[results['Realized_Price'] == 0.0]\n",
+        "not_sold['Value'] = not_sold['Value'].fillna(1)"
+      ],
+      "execution_count": 504,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "/usr/local/lib/python3.6/dist-packages/ipykernel_launcher.py:2: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+            "Try using .loc[row_indexer,col_indexer] = value instead\n",
+            "\n",
+            "See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy\n",
+            "  \n"
+          ],
+          "name": "stderr"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "uRC27qKXzCaU",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "d8a5ad94-f116-4864-c82d-f8290efee4a9"
+      },
+      "source": [
+        "sold = results[(results['Realized_Price'] != 0.0)]\n",
+        "results = pd.concat([sold, not_sold])\n",
+        "results.shape"
+      ],
+      "execution_count": 505,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 6)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 505
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yrYKWmp00198",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 279
+        },
+        "outputId": "85fe720a-1053-4c12-95a5-4d69a2e8b70a"
+      },
+      "source": [
+        "missing = results[results['Value'].isnull()]\n",
+        "missing.drop('Value', axis=1, inplace=True)\n",
+        "missing.head()"
+      ],
+      "execution_count": 506,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "/usr/local/lib/python3.6/dist-packages/pandas/core/frame.py:3940: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame\n",
+            "\n",
+            "See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy\n",
+            "  errors=errors)\n"
+          ],
+          "name": "stderr"
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>15</th>\n",
+              "      <td>Untitled (Spin Painting)</td>\n",
+              "      <td>16000.0</td>\n",
+              "      <td>19200.0</td>\n",
+              "      <td>2007-06-12</td>\n",
+              "      <td>Europe</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>29</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>30</th>\n",
+              "      <td>BEAUTIFUL, INTENSE, VIOLENTLY, GORGEOUS, PAINF...</td>\n",
+              "      <td>150000.0</td>\n",
+              "      <td>286000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>31</th>\n",
+              "      <td>Making Beautiful Drawings</td>\n",
+              "      <td>3000.0</td>\n",
+              "      <td>4750.0</td>\n",
+              "      <td>2018-06-07</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                                                Title  ...         Country\n",
+              "0                                  SPOT DRAWING NO. 2  ...  United Kingdom\n",
+              "15                           Untitled (Spin Painting)  ...          Europe\n",
+              "29                                 SPOT DRAWING NO. 2  ...  United Kingdom\n",
+              "30  BEAUTIFUL, INTENSE, VIOLENTLY, GORGEOUS, PAINF...  ...  United Kingdom\n",
+              "31                          Making Beautiful Drawings  ...  United Kingdom\n",
+              "\n",
+              "[5 rows x 5 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 506
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lzWbscbZEREi",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "1c09ca75-db2e-42b7-97ab-b490ac3fa3b5"
+      },
+      "source": [
+        "fx = pd.read_csv('https://raw.githubusercontent.com/AndrewMarksArt/DS-Unit-1-Sprint-5-Data-Storytelling-Blog-Post/master/additional_fx_data.csv')\n",
+        "fx['Date'] = pd.to_datetime(fx['Date'])\n",
+        "fx.head()"
+      ],
+      "execution_count": 507,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1971-01-04</td>\n",
+              "      <td>China</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1971-01-05</td>\n",
+              "      <td>China</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1971-01-06</td>\n",
+              "      <td>China</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>1971-01-07</td>\n",
+              "      <td>China</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>1971-01-08</td>\n",
+              "      <td>China</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "        Date Country  Value\n",
+              "0 1971-01-04   China    NaN\n",
+              "1 1971-01-05   China    NaN\n",
+              "2 1971-01-06   China    NaN\n",
+              "3 1971-01-07   China    NaN\n",
+              "4 1971-01-08   China    NaN"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 507
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "TTULEwuJWjp_",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "1397a435-ed99-4784-d34d-3e244a655679"
+      },
+      "source": [
+        "missing = pd.merge(missing,\n",
+        "                   fx,\n",
+        "                   on=['Country', 'Date'],\n",
+        "                   how='left')\n",
+        "missing.head(5)"
+      ],
+      "execution_count": 508,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Untitled (Spin Painting)</td>\n",
+              "      <td>16000.0</td>\n",
+              "      <td>19200.0</td>\n",
+              "      <td>2007-06-12</td>\n",
+              "      <td>Europe</td>\n",
+              "      <td>1.3325</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>BEAUTIFUL, INTENSE, VIOLENTLY, GORGEOUS, PAINF...</td>\n",
+              "      <td>150000.0</td>\n",
+              "      <td>286000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Making Beautiful Drawings</td>\n",
+              "      <td>3000.0</td>\n",
+              "      <td>4750.0</td>\n",
+              "      <td>2018-06-07</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.3427</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                                               Title  ...   Value\n",
+              "0                                 SPOT DRAWING NO. 2  ...  1.3139\n",
+              "1                           Untitled (Spin Painting)  ...  1.3325\n",
+              "2                                 SPOT DRAWING NO. 2  ...  1.3139\n",
+              "3  BEAUTIFUL, INTENSE, VIOLENTLY, GORGEOUS, PAINF...  ...  1.3139\n",
+              "4                          Making Beautiful Drawings  ...  1.3427\n",
+              "\n",
+              "[5 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 508
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "N_K5VTXxXAVw",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 195
+        },
+        "outputId": "64fb9f48-bf6f-4a0e-8f50-1e6f8e8f578b"
+      },
+      "source": [
+        "not_missing = results[results['Value'].notnull()]\n",
+        "results = pd.concat([not_missing, missing])\n",
+        "results = results.fillna(method='ffill')\n",
+        "results = results.rename(columns={'Date': 'Sale_Date'})\n",
+        "results.head()"
+      ],
+      "execution_count": 509,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6410</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6514</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>UNTITLED (PILL PAINTING)</td>\n",
+              "      <td>40000.0</td>\n",
+              "      <td>50000.0</td>\n",
+              "      <td>2015-03-10</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6629</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>My Way</td>\n",
+              "      <td>700000.0</td>\n",
+              "      <td>865875.0</td>\n",
+              "      <td>2013-06-25</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.6486</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>12</th>\n",
+              "      <td>With Dead Head, FullForma</td>\n",
+              "      <td>20000.0</td>\n",
+              "      <td>60500.0</td>\n",
+              "      <td>2008-02-28</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>0.5030</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  Low Estimate  ...         Country   Value\n",
+              "3                      Pharmacy        1500.0  ...  United Kingdom  0.6410\n",
+              "4   The Complete Spot Paintings        1000.0  ...  United Kingdom  0.6514\n",
+              "5      UNTITLED (PILL PAINTING)       40000.0  ...  United Kingdom  0.6629\n",
+              "7                        My Way      700000.0  ...  United Kingdom  0.6486\n",
+              "12    With Dead Head, FullForma       20000.0  ...  United Kingdom  0.5030\n",
+              "\n",
+              "[5 rows x 6 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 509
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SI-go1Too_MU",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "c8c0fc58-cdf9-443e-cd72-a06ff5e60682"
+      },
+      "source": [
+        "results.shape"
+      ],
+      "execution_count": 510,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 6)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 510
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "cunhKQPHZr__",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 77
+        },
+        "outputId": "f69a0e20-0050-46dd-8329-f87820c7108a"
+      },
+      "source": [
+        "auction_results = auction_history.drop(['Artist_Name','Size','Sale','Currency','Auction_House', 'Date_Created'],axis=1)\n",
+        "auction_results.head(1)"
+      ],
+      "execution_count": 511,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>performance</th>\n",
+              "      <th>House</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.1875</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                Title                    Medium  ... performance      House\n",
+              "0  SPOT DRAWING NO. 2  coloured pencil on paper  ...      2.1875  Sotheby's\n",
+              "\n",
+              "[1 rows x 10 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 511
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "v66IwREtpDk7",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "b0b32fe6-cb8c-4ba0-bff4-cb02b5fda1ad"
+      },
+      "source": [
+        "auction_results.shape"
+      ],
+      "execution_count": 512,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(6490, 10)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 512
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dSYBALlOk18D",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 296
+        },
+        "outputId": "bdb5fe23-2360-4a06-a261-ef432b17ef39"
+      },
+      "source": [
+        "auction_temp = pd.merge(auction_results,\n",
+        "                          results,\n",
+        "                          on=['Title','Realized_Price','Sale_Date','Low Estimate','Country'],\n",
+        "                          how='left')\n",
+        "auction_temp.head()"
+      ],
+      "execution_count": 513,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Realized_Price</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>performance</th>\n",
+              "      <th>House</th>\n",
+              "      <th>Value</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.18750</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.18750</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.56250</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.59375</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.00000</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>0.6410</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  ...   Value\n",
+              "0            SPOT DRAWING NO. 2  ...  1.3139\n",
+              "1            SPOT DRAWING NO. 2  ...  1.3139\n",
+              "2     Supreme Skate Deck Red #7  ...  1.0000\n",
+              "3  Supreme Skate Deck Yellow #6  ...  1.0000\n",
+              "4                      Pharmacy  ...  0.6410\n",
+              "\n",
+              "[5 rows x 11 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 513
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6uPEKfuXnO4C",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 296
+        },
+        "outputId": "f51ae6a9-2e89-4f81-a0e4-49e04a69cf16"
+      },
+      "source": [
+        "auction_temp.rename(columns={'Realized_Price': 'Price', 'House': 'Auction House', 'Value': 'FX Rate'}, inplace=True)\n",
+        "auction_temp.head()"
+      ],
+      "execution_count": 516,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Price</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>performance</th>\n",
+              "      <th>Auction House</th>\n",
+              "      <th>FX Rate</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.18750</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.18750</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.56250</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.59375</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.00000</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>0.6410</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  ... FX Rate\n",
+              "0            SPOT DRAWING NO. 2  ...  1.3139\n",
+              "1            SPOT DRAWING NO. 2  ...  1.3139\n",
+              "2     Supreme Skate Deck Red #7  ...  1.0000\n",
+              "3  Supreme Skate Deck Yellow #6  ...  1.0000\n",
+              "4                      Pharmacy  ...  0.6410\n",
+              "\n",
+              "[5 rows x 11 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 516
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "60BqnWNKnpiY",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 296
+        },
+        "outputId": "28e883ab-131e-45dd-cd90-60718060917f"
+      },
+      "source": [
+        "auction_temp.drop_duplicates(inplace=True)\n",
+        "auction_temp.head()"
+      ],
+      "execution_count": 521,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>Title</th>\n",
+              "      <th>Medium</th>\n",
+              "      <th>Signed_Edition</th>\n",
+              "      <th>Price</th>\n",
+              "      <th>Sale_Date</th>\n",
+              "      <th>Low Estimate</th>\n",
+              "      <th>High Estimate</th>\n",
+              "      <th>Country</th>\n",
+              "      <th>performance</th>\n",
+              "      <th>Auction House</th>\n",
+              "      <th>FX Rate</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>SPOT DRAWING NO. 2</td>\n",
+              "      <td>coloured pencil on paper</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>175000.0</td>\n",
+              "      <td>2018-06-27</td>\n",
+              "      <td>80000.0</td>\n",
+              "      <td>120000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.18750</td>\n",
+              "      <td>Sotheby's</td>\n",
+              "      <td>1.3139</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Supreme Skate Deck Red #7</td>\n",
+              "      <td>Color silkscreen on plywood in original</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>450.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.56250</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>Supreme Skate Deck Yellow #6</td>\n",
+              "      <td>Color silkscreen on plywood in original bag</td>\n",
+              "      <td>from an edition of 500</td>\n",
+              "      <td>475.0</td>\n",
+              "      <td>2017-06-04</td>\n",
+              "      <td>800.0</td>\n",
+              "      <td>1200.0</td>\n",
+              "      <td>United States</td>\n",
+              "      <td>0.59375</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>1.0000</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>Pharmacy</td>\n",
+              "      <td>offset lithograph printed in colours</td>\n",
+              "      <td>42/200</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2015-07-16</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>2000.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>1.00000</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>0.6410</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>The Complete Spot Paintings</td>\n",
+              "      <td>with butterfly and heart drawing on the slipca...</td>\n",
+              "      <td>Signed</td>\n",
+              "      <td>2375.0</td>\n",
+              "      <td>2015-06-03</td>\n",
+              "      <td>1000.0</td>\n",
+              "      <td>1500.0</td>\n",
+              "      <td>United Kingdom</td>\n",
+              "      <td>2.37500</td>\n",
+              "      <td>Other</td>\n",
+              "      <td>0.6514</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "                          Title  ... FX Rate\n",
+              "0            SPOT DRAWING NO. 2  ...  1.3139\n",
+              "2     Supreme Skate Deck Red #7  ...  1.0000\n",
+              "3  Supreme Skate Deck Yellow #6  ...  1.0000\n",
+              "4                      Pharmacy  ...  0.6410\n",
+              "6   The Complete Spot Paintings  ...  0.6514\n",
+              "\n",
+              "[5 rows x 11 columns]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 521
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SRjMcO05qx5S",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "ee3632a7-7893-4982-ef39-ca1fc184b7fd"
+      },
+      "source": [
+        "x = auction_temp['Price'][0]*auction_temp['FX Rate'][0]\n",
+        "y = auction_temp['Price'][4]/auction_temp['FX Rate'][4]\n",
+        "x, y"
+      ],
+      "execution_count": 527,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(229932.5, 2340.09360374415)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 527
+        }
+      ]
     }
   ]
 }
