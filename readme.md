@@ -149,4 +149,6 @@ During Class - Last day of Sprint 5
 
 # Add a link to your portfolio:
 
-[Example Link](http://www.dsglossary.com)
+- [Example Link DS Glossary](http://www.dsglossary.com)
+
+- [Nov05](https://nov05.github.io/)
