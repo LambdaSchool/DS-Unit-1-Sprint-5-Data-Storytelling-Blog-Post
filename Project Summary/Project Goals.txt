@@ -1,0 +1,11 @@
+Data Storytelling Project:
+
+Things I want to analyze:
+1. Does draft round affect career earnings
+2. Does draft round correlate to career length (years)
+
+Things to analyze in a future project:
+1. Are there any strong relationships between combine stats and 
+    draft round selected
+2. Are there any strong relationships between combine stats and 
+    career earnings
