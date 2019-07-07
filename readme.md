@@ -11,6 +11,8 @@ _The project has five parts. For each part, we've listed what's required to pass
 
 ### 1. Blog post
 
+[blog post link](https://medium.com/@bundickm/the-secrets-of-catan-ed203a9a7c61)
+
 Required
 - Choose your own topic and data.
 - Write a blog post with at least two data visualizations, to communicate insights on your topic.
@@ -30,6 +32,7 @@ Recommended
 - Keep it simple. Don’t use machine learning. (You’ll do this in future projects!)
 
 ### 3. Short summary
+
 Required
 - Describe your project in 280 characters or less.
 - Choose one data visualization (static image or animated gif) from your blog post.
@@ -39,6 +42,7 @@ Recommended
 - Share your short project summary on Twitter or LinkedIn, and link to your blog post.
 
 ### 4. Portfolio
+[Portfolio Site](https://bundickm.github.io/)
 Required
 - Add your short summary to your portfolio site.
 - Link from your portfolio site to your blog post and code.
