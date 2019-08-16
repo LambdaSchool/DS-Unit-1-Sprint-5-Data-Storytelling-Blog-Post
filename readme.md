@@ -93,7 +93,7 @@ During Class - Last day of Sprint 5
 ### [Projects — Lambda DS1!](https://drive.google.com/file/d/1RJoAqDgawzSHOJPlDQRRlfz-EnIsskpL/view?usp=sharing)
 
 ### Projects — Others
-- [How Americans rank their cities' tacos and transit](https://cdn.theatlantic.com/assets/media/img/posts/2018/12/tacos_vs_transit_major_cities/44577a9f0.png). (You can do something this simple!)
+- [How Americans rank their city's tacos and transit](https://cdn.theatlantic.com/assets/media/img/posts/2018/12/tacos_vs_transit_major_cities/44577a9f0.png). (You can do something this simple!)
 - [Mountains and Money in Colorado’s Ageless Alps: A Visual Exploration of Longevity in the Mountains](https://twitter.com/mulletmapping/status/1080847004270583809). (Or this complex!)
 - ***[Training Kit](https://learn.lambdaschool.com/ds/module/recedjanlbpqxic2r) has many more examples, and a process to help you find ideas.***
 
