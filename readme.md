@@ -31,7 +31,7 @@ Recommended
 
 ### 3. Short summary
 Required
-- Describe your project in 280 characters or less.
+- I analyzed three book-related datasets in order to tell some stories about stories, looking into reviews of Amazon e-book sales, statistics of 1,000 classics,  NYT Best Seller authors and publishers from 2008 to 2018 and similarities between their topic and theme descriptions.
 - Choose one data visualization (static image or animated gif) from your blog post.
 - [Annotate your visualization](https://www.dataquest.io/blog/making-538-plots/) so it’s understandable on its own, without reading your blog post.
 
@@ -149,4 +149,6 @@ During Class - Last day of Sprint 5
 
 # Add a link to your portfolio:
 
-[Example Link](http://www.dsglossary.com)
+[My Portfolio Site](mmastin.github.io) - not currently loading new post, but Medium below:
+
+[Medium Post](https://medium.com/@mattmastin/bestsellers-and-bargain-bins-a-statistical-glimpse-into-books-939bc6fc53d1)
