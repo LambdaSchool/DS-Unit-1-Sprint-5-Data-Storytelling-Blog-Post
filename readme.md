@@ -149,4 +149,5 @@ During Class - Last day of Sprint 5
 
 # Add a link to your portfolio:
 
-[Example Link](http://www.dsglossary.com)
+- [Steve's Portfolio](https://smsinclair.github.io)
+- [Movie Genre Visualization Repo](https://github.com/SMSinclair/Movie-Genre-Visualization)
