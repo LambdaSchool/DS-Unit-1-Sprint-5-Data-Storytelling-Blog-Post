@@ -149,4 +149,4 @@ During Class - Last day of Sprint 5
 
 # Add a link to your portfolio:
 
-[Example Link](http://www.dsglossary.com)
+[Link](http://dataanalyticsnyc.com)
